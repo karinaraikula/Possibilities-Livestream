@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="">
+    <link href="/css/tailwind.css" rel="stylesheet">
+
+  </head>
+  <body>
+      <div class="chat-container flex flex-col min-h-screen justify-center items-center bg-gray-50">
+
+        <main class="chat-main max-w-sm border-2 border-rose-500 bg-gray-50">
+          <div class="flex flex-row justify-center">
+          <h1 class="text-orange-500 text-2xl">Chat –</h1>
+          <h2 id="room-name" class="text-orange-500 text-2xl pl-1"></h2>
+          </div>
+
+              <div class="chat-side w-80 pb-5 flex flex-row pl-2 border-b-4">
+                <h3 class="pr-1">Users:</h3>
+                <ul id="users" class="pr-1"></ul>
+              </div>
+              <div class="chat-messages"></div>
+        </main>
+
+        <div class="chat-form-container m-w-sm">
+            <form id="chat-form" action="" class="flex items-center py-2 w-80 bg-gray-50 dark:bg-gray-70 border-2 border-rose-500">
+                <input 
+                class="block  p-2.5 ml-1 mr-1 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                id="msg" 
+                type="text"
+                autocomplete="off" 
+                placeholder="Enter message"
+                required
+                />
+                <button class="btn inline-flex justify-center p-2 mr-1 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100 dark:text-blue-500 dark:hover:bg-gray-600">
+                <svg class="w-6 h-6 rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+              </button>
+              </form>
+
+            <a href="index.html" class="btn text-xs">Leave Room</a>
+       
+        </div>
+    </div>
+
+    <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.1.2/qs.min.js" 
+    integrity="sha512-LIxZvLf3cF72wbVxt+3ajwseTY82yjgyVvAN2nQ2B037JtZPaVZRkaukU/JmG1EkbFmD9a7Wx5VAcosed0/u6g==" 
+    crossorigin="anonymous">
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="chat.js"></script>
+  </body>
+</html>
