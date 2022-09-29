@@ -173,32 +173,21 @@
 
   <body class="bg-secondary-dark">
     <header>
-      <nav id="fullNav" class="flex justify-between mx-8 h-16">
-        <div class="flex md:hidden">
-          <button onclick="hamNav()">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          </button>
-          <ul  id="hamNav" class="hidden">
-          <li class=""> <a href="#"> Live-Stream</a></li>
-          <li class=""><a href="#"> Lisätietoja
-          </a></li>
-          <li class=""><a href="#">Ota yhteyttä</a></li>
-        </ul>
+      <section class="top-nav z-10">
+        <div>
+          Metropolia-live
         </div>
-         <ul class="hidden md:flex md:z-10 justify-around w-2/4">
-          <li class="navItems"> <a href="#"> Live-Stream</a></li>
-          <li class="navItems"><a href="#"> Lisätietoja
-          </a></li>
-          <li class="navItems"><a href="#">Ota yhteyttä</a></li>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+        <ul class="menu">
+          <li>Etusivu</li>
+          <li>Lisätietoa</li>
+          <li>Ota yhteyttä </li>
         </ul>
-        
-        <h1 class="metropoliaLive text-primary-dark text-right text-2xl mr-10">
-          Metropolia - Live
-        </h1>
-      </nav>
-      <div class="relative w-full h-72">
+      </section>
+      <div class=" w-full h-72">
         <img
           class="object-cover w-full h-full"
           src="/images/inspiskuva.jpg"
@@ -222,7 +211,7 @@
         </div>
       </div>
     </header>
-    <main>
+    <main  class="absolute md:mt-32 mt-48">
       <div>
       <p class="text-center text-lg mt-10" id="demo">countdown</p>
     </div>
@@ -405,12 +394,14 @@
         content-center
         mt-6
         p-5
+        absolute
       "
     >
       Metropolia Karamalmi
     </footer>
-    <script src="/utils/hamNav.js"></script>
+
     <script src="counter.js"></script>
+    <script src="hamNav.js"></script>
     <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
     <script>
       let myPlayer = document.querySelector(".video-js");
