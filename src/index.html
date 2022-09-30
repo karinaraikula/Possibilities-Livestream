@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/output.css" rel="stylesheet" />
     <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
     <style>
       .player {
         height: 200px;
@@ -171,50 +175,50 @@
     </style>
   </head>
 
-  <body class="bg-secondary-dark">
+  <body class="bg-primary-light">
     <header>
-      <section class="top-nav z-10">
+      <section class="top-nav">
         <div>
-          Metropolia-live
+          <img src="/images/metropolia-logo.png" alt="" class="h-14">
         </div>
         <input id="menu-toggle" type="checkbox" />
         <label class='menu-button-container' for="menu-toggle">
           <div class='menu-button'></div>
         </label>
-        <ul class="menu">
+        <ul class="menu text-lg">
           <li> <a href="">Etusivu</a> </li>
           <li> <a href="">Lisätietoa</a> </li>
           <li> <a href="">Ota yhteyttä</a> </li>
         </ul>
       </section>
-      <div class=" w-full h-72">
+      <div class=" w-full h-80">
         <img
           class="object-cover w-full h-full"
-          src="/images/inspiskuva.jpg"
+          src="/images/future.jpg"
           alt="header picture of people walking in a futuristic corridor"
         />
 
-        <h2 class="absolute text-4xl text-primary-dark top-16 pl-5">
+        <h2 class="absolute text-4xl text-secondary-light top-28 pl-5">
           Mahdollisuuksien maisemia
         </h2>
        
         
-      <div class="bg-primary-color md:flex">
+      <div class="bg-secondary-dark md:flex text-secondary-light" >
         <div class="p-5 text-lg md:w-6/12">
           <p class="text-left">Luovuus sinun työssäsi?</p>
           <p class="text-left">Mitä luovuus työelämässä mahdollistaa?</p>
         </div>
         <div
-          class="bg-primary-color p-5 text-right text-sm md:text-lg md:w-6/12"
+          class="bg-secondary-dark p-5 text-right text-sm md:text-lg md:w-6/12"
         >
-          <p>#Mahollisuuksien maisemia</p>
+          <p>#MahollisuuksienMaisemia</p>
           <p>kulttuurihyvinvointi@metropolia.fi</p>
         </div>
       </div>
     </header>
     <main class="md:mt-32 mt-48">
       <div>
-        <p class="text-center text-lg mt-10" id="demo">countdown</p>
+        <p class="text-center lg:text-4xl sm:text-2xl pb-6 text-primary-dark" id="demo">. . .</p>
       </div>
       <section
         class="
@@ -234,7 +238,7 @@
           </video>
         </div>
         <p></p>
-        <div id="liveChat" class="border m-auto mt-5 w-8/12 h-52">
+        <div id="liveChat" class="border m-auto mt-5 w-8/12 h-96">
           <form action="chat.html">
             <div class="form pt-4 flex flex-col">
               <label for="username" class="text-lg">Username</label>
@@ -377,25 +381,27 @@
         </div>
               --->
       </section>
-      <section>
-        <div class="border bg-primary-light w-8/12 m-auto mt-10 p-5">
-          Infoa tähän Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Quidem ex quam optio consequuntur ullam aliquam, libero voluptatem
-          porro inventore culpa sequi placeat expedita repellendus corporis
-          excepturi facere quae, facilis quo!
+      <section  class="bg-primary-color-light w-full m-auto mt-10 p-5 md:flex justify-evenly text-lg text-primary-dark">
+        <div class="md:w-1/2 mx-3 pr-4 w-full ">
+          <h3 class="text-4xl my-4">Mikä tapahtuma</h2>
+          <p class="w-full">Miten luovuuden mahdollisuuksia huomioiva näkökulma työelämässä eri aloilla ja ammateissa otetaan käyttöön? Miten luovuuden huomiointi edistää kestävää, hyvää työelämää ja tulevaisuutta? Moniäänisessä tapahtumassa kuullaan sekä huippututkijoiden puheenvuoroja että käydään eri alojen ammattilaisten ja opiskelijoiden yhteistä keskustelua luovuuden mahdollisuuksista työelämässä.</p>
         </div>
+        <div class="md:w-1/2 mx-3 pr-4 w-full">  
+          <h3 class="text-4xl my-4">Kenelle?</h2>
+          <p class="w-full">Tapahtuma on tarkoitettu eri alojen ammateissa toimiville ammattilaisille, asiantuntijoille, yrittäjille ja opiskelijoille. Luovuus tuo mahdollisuuksia kaikilla aloilla!</p>
+        </div>
+
       </section>
     </main>
     <footer
       class="
-        bg-primary-color
+        bg-metropolia-orange
         text-lg
         flex
         justify-center
         content-center
-        mt-6
         p-5
-        
+      text-secondary-light
       "
     >
       Metropolia Karamalmi

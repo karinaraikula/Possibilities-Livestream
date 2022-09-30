@@ -6,6 +6,9 @@
     text-align: center;
   }
 
+  h3 {
+  }
+
   html,
   body {
     margin: 0;
@@ -21,12 +24,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #00baf0;
-    background: linear-gradient(to left, #f46b45, #eea849);
+    background-color: #fff;
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: #fff;
-    height: 50px;
-    padding: 1em;
+    color: #160f2e;
+    height: 80px;
+    padding: 1.2em;
   }
 
   .menu {
@@ -60,7 +62,7 @@
   .menu-button::before,
   .menu-button::after {
     display: block;
-    background-color: #fff;
+    background-color: #160f2e;
     position: absolute;
     height: 4px;
     width: 30px;
@@ -99,12 +101,13 @@
     .menu {
       position: absolute;
       top: 0;
-      margin-top: 50px;
+      margin-top: 80px;
       left: 0;
       flex-direction: column;
       width: 100%;
       justify-content: center;
       align-items: center;
+      z-index: 30;
     }
     #menu-toggle ~ .menu li {
       height: 0;
@@ -132,19 +135,9 @@
       border-bottom: 1px solid #444;
     }
   }
-  .navItems {
-    box-shadow: inset 0 0 0 0 rgba(210, 200, 250, 0.1);
-    color: #210916ff;
-    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    margin-top: 1em;
-  }
-  .navItems:hover {
-    box-shadow: inset 0 -4em 0 0 rgba(210, 200, 250, 0.4);
-    color: #210916ff;
-  }
-  .metropoliaLive {
-  }
-  h3 {
+  #demo {
+    font-family: "Josefin Sans", sans-serif;
+    font-style: bold;
   }
 }
 @layer components {
