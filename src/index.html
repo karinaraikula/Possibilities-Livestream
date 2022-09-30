@@ -172,13 +172,22 @@
   </head>
 
   <body class="bg-secondary-dark">
-    <header class="h-fit">
-      <nav>
-        <h1 class="text-primary-dark text-right text-2xl mr-10">
-          Metropolia - Live
-        </h1>
-      </nav>
-      <div class="relative w-full h-96">
+    <header>
+      <section class="top-nav z-10">
+        <div>
+          Metropolia-live
+        </div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+        <ul class="menu">
+          <li> <a href="">Etusivu</a> </li>
+          <li> <a href="">Lisätietoa</a> </li>
+          <li> <a href="">Ota yhteyttä</a> </li>
+        </ul>
+      </section>
+      <div class=" w-full h-72">
         <img
           class="object-cover w-full h-full"
           src="/images/inspiskuva.jpg"
@@ -189,6 +198,7 @@
           Mahdollisuuksien maisemia
         </h2>
        
+        
       <div class="bg-primary-color md:flex">
         <div class="p-5 text-lg md:w-6/12">
           <p class="text-left">Luovuus sinun työssäsi?</p>
@@ -202,11 +212,10 @@
         </div>
       </div>
     </header>
-
-    <main class="absolute md:mt-32 mt-48">
-      <div class="">
-        <p class="text-center text-lg w-full h-12" id="demo">countdown</p>
-      </div>
+    <main class="md:mt-32 mt-48">
+      <div>
+      <p class="text-center text-lg mt-10" id="demo">countdown</p>
+    </div>
       <section
         class="
         
@@ -266,7 +275,6 @@
             </button>
           </form>
         </div>
- 
         <div
           class="
             chat-container
@@ -368,7 +376,7 @@
           </div>
             
         </div>
-           --->
+              --->
       </section>
       <section>
         <div class="border bg-primary-light w-8/12 m-auto mt-10 p-5">
@@ -388,24 +396,28 @@
         content-center
         mt-6
         p-5
-      ">
-    Metropolia Karamalmi
-  </footer>
-  <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
-  <script src="counter.js"></script>
-  <script>
-    let myPlayer = document.querySelector(".video-js");
+        
+      "
+    >
+      Metropolia Karamalmi
+    </footer>
 
-    console.log(myPlayer);
+    <script src="counter.js"></script>
+    <script src="hamNav.js"></script>
+    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+    <script>
+      let myPlayer = document.querySelector(".video-js");
 
-    videojs(myPlayer, {
-      controls: true,
-      autoplay: true,
-      muted: true,
-      fluid: true,
-      poster: "picture.png",
-    });
-  </script>
-</body>
+      console.log(myPlayer);
 
+      videojs(myPlayer, {
+        controls: true,
+        autoplay: false,
+        muted: true,
+        fluid: true,
+        poster: "picture.png",
+        
+      });
+    </script>
+  </body>
 </html>
