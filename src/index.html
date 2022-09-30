@@ -1,312 +1,428 @@
 <!DOCTYPE html>
-<html>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/dist/output.css" rel="stylesheet" />
-  <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
-  <style>
-    .player {
-      height: 200px;
-      width: 400px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+    <style>
+      .player {
+        height: 200px;
+        width: 400px;
+      }
 
-    .vjs-theme-city {
-      --vjs-theme-city--primary: #E5C7B4ff;
-      --vjs-theme-city--secondary: #fff;
-    }
+      .vjs-theme-city {
+        --vjs-theme-city--primary: #e5c7b4ff;
+        --vjs-theme-city--secondary: #fff;
+      }
 
-    .vjs-theme-city .vjs-control-bar {
-      height: 70px;
-      padding-top: 20px;
-      background: none;
-      background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
-    }
+      .vjs-theme-city .vjs-control-bar {
+        height: 70px;
+        padding-top: 20px;
+        background: none;
+        background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+      }
 
-    .vjs-theme-city .vjs-button>.vjs-icon-placeholder::before {
-      line-height: 50px;
-    }
+      .vjs-theme-city .vjs-button > .vjs-icon-placeholder::before {
+        line-height: 50px;
+      }
 
-    .vjs-theme-city .vjs-play-progress::before {
-      display: none;
-    }
+      .vjs-theme-city .vjs-play-progress::before {
+        display: none;
+      }
 
-    .vjs-theme-city .vjs-progress-control {
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      width: 100%;
-      height: 20px;
-    }
+      .vjs-theme-city .vjs-progress-control {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 20px;
+      }
 
-    .vjs-theme-city .vjs-progress-control .vjs-progress-holder {
-      position: absolute;
-      top: 20px;
-      right: 0;
-      left: 0;
-      width: 100%;
-      margin: 0;
-    }
+      .vjs-theme-city .vjs-progress-control .vjs-progress-holder {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+      }
 
-    .vjs-theme-city .vjs-play-progress {
-      background-color: #E5C7B4ff;
-    }
+      .vjs-theme-city .vjs-play-progress {
+        background-color: #e5c7b4ff;
+      }
 
-    .vjs-theme-city .vjs-remaining-time {
-      order: 1;
-      line-height: 50px;
-      flex: 3;
-      text-align: left;
-      font-size: medium;
-    }
+      .vjs-theme-city .vjs-remaining-time {
+        order: 1;
+        line-height: 50px;
+        flex: 3;
+        text-align: left;
+        font-size: medium;
+      }
 
-    .vjs-theme-city .vjs-play-control {
-      order: 2;
-      flex: 8;
-      font-size: 2em;
-    }
+      .vjs-theme-city .vjs-play-control {
+        order: 2;
+        flex: 8;
+        font-size: 2em;
+      }
 
-    .vjs-theme-city .vjs-volume-panel,
-    .vjs-theme-city .vjs-picture-in-picture-control,
-    .vjs-theme-city .vjs-fullscreen-control {
-      order: 3;
-      flex: 1;
-      font-size: 1.2em;
-    }
+      .vjs-theme-city .vjs-volume-panel,
+      .vjs-theme-city .vjs-picture-in-picture-control,
+      .vjs-theme-city .vjs-fullscreen-control {
+        order: 3;
+        flex: 1;
+        font-size: 1.2em;
+      }
 
-    /* Volume stuff */
-    .vjs-theme-city .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal {
-      height: 100%;
-    }
+      /* Volume stuff */
+      .vjs-theme-city
+        .vjs-volume-panel:hover
+        .vjs-volume-control.vjs-volume-horizontal {
+        height: 100%;
+      }
 
-    .vjs-theme-city .vjs-mute-control {
-      display: none;
-    }
+      .vjs-theme-city .vjs-mute-control {
+        display: none;
+      }
 
-    .vjs-theme-city .vjs-volume-panel {
-      margin-left: 0.5em;
-      margin-right: 0.5em;
-      padding-top: 1.0em;
-    }
+      .vjs-theme-city .vjs-volume-panel {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        padding-top: 1em;
+      }
 
-    .vjs-theme-city .vjs-volume-panel,
-    .vjs-theme-city .vjs-volume-panel:hover,
-    .vjs-theme-city .vjs-volume-panel.vjs-volume-panel-horizontal:hover,
-    .vjs-theme-city .vjs-volume-panel:focus .vjs-volume-control.vjs-volume-horizontal,
-    .vjs-theme-city .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal,
-    .vjs-theme-city .vjs-volume-panel:active .vjs-volume-control.vjs-volume-horizontal,
-    .vjs-theme-city .vjs-volume-panel.vjs-volume-panel-horizontal:hover,
-    .vjs-theme-city .vjs-volume-bar.vjs-slider-horizontal {
-      width: 3em;
-    }
+      .vjs-theme-city .vjs-volume-panel,
+      .vjs-theme-city .vjs-volume-panel:hover,
+      .vjs-theme-city .vjs-volume-panel.vjs-volume-panel-horizontal:hover,
+      .vjs-theme-city
+        .vjs-volume-panel:focus
+        .vjs-volume-control.vjs-volume-horizontal,
+      .vjs-theme-city
+        .vjs-volume-panel:hover
+        .vjs-volume-control.vjs-volume-horizontal,
+      .vjs-theme-city
+        .vjs-volume-panel:active
+        .vjs-volume-control.vjs-volume-horizontal,
+      .vjs-theme-city .vjs-volume-panel.vjs-volume-panel-horizontal:hover,
+      .vjs-theme-city .vjs-volume-bar.vjs-slider-horizontal {
+        width: 3em;
+      }
 
-    .vjs-theme-city .vjs-volume-level::before {
-      font-size: 1em;
-    }
+      .vjs-theme-city .vjs-volume-level::before {
+        font-size: 1em;
+      }
 
-    .vjs-theme-city .vjs-volume-panel .vjs-volume-control {
-      opacity: 1;
-      width: 100%;
-      height: 100%;
-    }
+      .vjs-theme-city .vjs-volume-panel .vjs-volume-control {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+      }
 
-    .vjs-theme-city .vjs-volume-bar {
-      background-color: transparent;
-      margin: 0;
-    }
+      .vjs-theme-city .vjs-volume-bar {
+        background-color: transparent;
+        margin: 0;
+      }
 
-    .vjs-theme-city .vjs-slider-horizontal .vjs-volume-level {
-      height: 100%;
-    }
+      .vjs-theme-city .vjs-slider-horizontal .vjs-volume-level {
+        height: 100%;
+      }
 
-    .vjs-theme-city .vjs-volume-bar.vjs-slider-horizontal {
-      margin-top: 0;
-      margin-bottom: 0;
-      height: 100%;
-    }
+      .vjs-theme-city .vjs-volume-bar.vjs-slider-horizontal {
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 100%;
+      }
 
-    .vjs-theme-city .vjs-volume-bar::before {
-      content: '';
-      z-index: 0;
-      width: 0;
-      height: 0;
-      position: absolute;
-      top: 0px;
-      left: 0;
+      .vjs-theme-city .vjs-volume-bar::before {
+        content: "";
+        z-index: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0px;
+        left: 0;
 
-      border-style: solid;
-      border-width: 0 0 1.75em 3em;
-      border-color: transparent transparent rgba(255, 255, 255, 0.25) transparent;
-    }
+        border-style: solid;
+        border-width: 0 0 1.75em 3em;
+        border-color: transparent transparent rgba(255, 255, 255, 0.25)
+          transparent;
+      }
 
-    .vjs-theme-city .vjs-volume-level {
-      overflow: hidden;
-      background-color: transparent;
-    }
+      .vjs-theme-city .vjs-volume-level {
+        overflow: hidden;
+        background-color: transparent;
+      }
 
-    .vjs-theme-city .vjs-volume-level::before {
-      content: '';
-      z-index: 1;
-      width: 0;
-      height: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
+      .vjs-theme-city .vjs-volume-level::before {
+        content: "";
+        z-index: 1;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
 
-      border-style: solid;
-      border-width: 0 0 1.75em 3em;
-      border-color: transparent transparent let(--vjs-theme-city--secondary) transparent;
-    }
-  </style>
+        border-style: solid;
+        border-width: 0 0 1.75em 3em;
+        border-color: transparent transparent var(--vjs-theme-city--secondary)
+          transparent;
+      }
+    </style>
+  </head>
 
-</head>
+  <body class="bg-primary-light">
+    <header>
+      <section class="top-nav">
+        <div>
+          <img src="/images/metropolia-logo.png" alt="" class="h-14">
+        </div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+        <ul class="menu text-lg">
+          <li> <a href="">Etusivu</a> </li>
+          <li> <a href="">Lisätietoa</a> </li>
+          <li> <a href="">Ota yhteyttä</a> </li>
+        </ul>
+      </section>
+      <div class=" w-full h-80">
+        <img
+          class="object-cover w-full h-full"
+          src="/images/future.jpg"
+          alt="header picture of people walking in a futuristic corridor"
+        />
 
-<body class="bg-secondary-dark">
-  <header>
-    <nav>
-      <h1 class="text-primary-dark text-right text-2xl mr-10">
-        Metropolia - Live
-      </h1>
-    </nav>
-    <div class="relative">
-      <img src="images/inspiskuva.jpg" alt="header picture of people walking in a futuristic corridor" />
-
-      <h2 class="text-4xl text-primary-dark absolute top-16 pl-5">
-        Mahdollisuuksien maisemiaaaaaa
-      </h2>
-    </div>
-    <div>
-      <p class="text-center text-lg mt-10" id="demo">ldldl</p>
-    </div>
-
-    <div class="bg-primary-color md:flex">
-      <div class="p-5 text-lg md:w-6/12">
-        <p class="text-left">Luovuus sinun työssäsi?</p>
-        <p class="text-left">Mitä luovuus työelämässä mahdollistaa?</p>
+        <h2 class="absolute text-4xl text-secondary-light top-28 pl-5">
+          Mahdollisuuksien maisemia
+        </h2>
+       
+        
+      <div class="bg-secondary-dark md:flex text-secondary-light" >
+        <div class="p-5 text-lg md:w-6/12">
+          <p class="text-left">Luovuus sinun työssäsi?</p>
+          <p class="text-left">Mitä luovuus työelämässä mahdollistaa?</p>
+        </div>
+        <div
+          class="bg-secondary-dark p-5 text-right text-sm md:text-lg md:w-6/12"
+        >
+          <p>#MahollisuuksienMaisemia</p>
+          <p>kulttuurihyvinvointi@metropolia.fi</p>
+        </div>
       </div>
-      <div class="bg-primary-color p-5 text-right text-sm md:text-lg md:w-6/12">
-        <p>#Mahollisuuksien maisemia</p>
-        <p>kulttuurihyvinvointi@metropolia.fi</p>
+    </header>
+    <main class="md:mt-32 mt-48">
+      <div>
+        <p class="text-center lg:text-4xl sm:text-2xl pb-6 text-primary-dark" id="demo">. . .</p>
       </div>
-    </div>
-  </header>
-  <main>
-    <section class="
+      <section
+        class="
           container
           border
           bg-secondary-dark
           w-auto
           m-auto
-          mt-5
-          p-5
-          md:flex
-        ">
-      <div id="videoDiv" class="w-10/12 mr-5">
-        <video id="my-video" class="video-js vjs-theme-city">
-          <source src="images/video.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <p></p>
-      <div id="liveChat" class="border m-auto mt-5 w-8/12 h-52 md:w-5/12">
-        <form action="chat.html">
-          <div class="form pt-4 flex flex-col">
-            <label for="username" class="text-lg">Username</label>
-            <input
-              class="pl-1 border-2"
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Enter username..."
-              required
-            />
-          </div>
-          <div class="form flex pt-2 flex-col">
-            <label for="room" class="text-lg">Room</label>
-            <select name="room" id="room" class="border-2 p-0.5">
-              <option value="Room 1">First room</option>
-              <option value="Room 2">Second room</option>
-            </select>
-          </div>
-          <button type="submit" class="bt p-2 ml-auto mr-auto mt-4 flex justify-center rounded-full text-white bg-primary-color hover:bg-primary-light">Join Chat</button>
-        </form>
-      </div>
-
-      <div class="chat-container flex flex-col min-h-screen justify-center items-center">
-        <div class=" bg-gray-100 pb-3">
-        <main class="chat-main max-w-sm pt-3 bg-gray-100">
-          <div class="flex flex-row justify-center">
-          <h1 class="text-primary-color text-2xl">Chat –</h1>
-          <h2 id="room-name" class="text-primary-color text-2xl pl-1"></h2>
-          </div>
+          lg:flex
+          lg:w-full
+        "
+      >    
+    
+        <div id="videoDiv" class="m-auto lg:w-full">
+          <video id="my-video" class="video-js vjs-theme-city vjs-big-play-centered">
+            <source src="images/video.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <p></p>
+        <div id="liveChat" class="border m-auto mt-5 w-8/12 h-96">
+          <form action="chat.html">
+            <div class="form pt-4 flex flex-col">
+              <label for="username" class="text-lg">Username</label>
+              <input
+                class="pl-1 border-2"
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Enter username..."
+                required
+              />
+            </div>
+            <!---- <div class="form flex pt-2 flex-col">
+              <label for="room" class="text-lg">Room</label>
+              <select name="room" id="room" class="border-2 p-0.5">
+                <option value="Room 1">First room</option>
+                <option value="Room 2">Second room</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="
+                bt
+                p-2
+                ml-auto
+                mr-auto
+                mt-4
+                flex
+                justify-center
+                rounded-full
+                text-white
+                bg-primary-color
+                hover:bg-primary-light
+              "
+            >
+              Join Chat
+            </button>
+          </form>
+        </div>
+        <div
+          class="
+            chat-container
+            flex flex-col
+            min-h-screen
+            justify-center
+            items-center
+          "
+        >
+          <div class="bg-gray-100 pb-3">
+            <main class="chat-main max-w-sm pt-3 bg-gray-100">
+              <div class="flex flex-row justify-center">
+                <h1 class="text-primary-color text-2xl">Chat –</h1>
+                <h2
+                  id="room-name"
+                  class="text-primary-color text-2xl pl-1"
+                ></h2>
+              </div>
 
               <div class="chat-side w-80 pb-5 flex flex-row pl-2 border-b-4">
                 <h3 class="pr-1">Users:</h3>
                 <ul id="users" class="pr-1"></ul>
               </div>
               <div class="chat-messages"></div>
-        </main>
+            </main>
 
-        <div class="chat-form-container m-w-sm">
-            <form id="chat-form" action="" class="flex items-center py-2 w-80 bg-gray-100 dark:bg-gray-70 border-t-4 ">
-                <input 
-                class="block  p-2.5 ml-1 mr-1 w-full text-sm text-black bg-white rounded-lg border border-gray-300 "
-                id="msg" 
-                type="text"
-                autocomplete="off" 
-                placeholder="Enter message"
-                required
+            <div class="chat-form-container m-w-sm">
+              <form
+                id="chat-form"
+                action=""
+                class="
+                  flex
+                  items-center
+                  py-2
+                  w-80
+                  bg-gray-100
+                  dark:bg-gray-70
+                  border-t-4
+                "
+              >
+                <input
+                  class="
+                    block
+                    p-2.5
+                    ml-1
+                    mr-1
+                    w-full
+                    text-sm text-black
+                    bg-white
+                    rounded-lg
+                    border border-gray-300
+                  "
+                  id="msg"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Enter message"
+                  required
                 />
-                <button class="btn inline-flex justify-center p-2 mr-1 text-primary-dark rounded-full cursor-pointer hover:bg-primary-light">
-                <svg class="w-6 h-6 rotate-90" fill="#210916ff" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
-              </button>
+                <button
+                  class="
+                    btn
+                    inline-flex
+                    justify-center
+                    p-2
+                    mr-1
+                    text-primary-dark
+                    rounded-full
+                    cursor-pointer
+                    hover:bg-primary-light
+                  "
+                >
+                  <svg
+                    class="w-6 h-6 rotate-90"
+                    fill="#210916ff"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
+                    ></path>
+                  </svg>
+                </button>
               </form>
 
-            <a href="index.html" class="btn text-xs p-1 ml-1 rounded bg-primary-light hover:bg-primary-color ">Leave Room</a>
-       
+              <a
+                href="index.html"
+                class="
+                  btn
+                  text-xs
+                  p-1
+                  ml-1
+                  rounded
+                  bg-primary-light
+                  hover:bg-primary-color
+                "
+                >Leave Room</a
+              >
+            </div>
+          </div>
+            
         </div>
-      </div>
-    </div>
+              --->
+      </section>
+      <section  class="bg-primary-color-light w-full m-auto mt-10 p-5 md:flex justify-evenly text-lg text-primary-dark">
+        <div class="md:w-1/2 mx-3 pr-4 w-full ">
+          <h3 class="text-4xl my-4">Mikä tapahtuma</h2>
+          <p class="w-full">Miten luovuuden mahdollisuuksia huomioiva näkökulma työelämässä eri aloilla ja ammateissa otetaan käyttöön? Miten luovuuden huomiointi edistää kestävää, hyvää työelämää ja tulevaisuutta? Moniäänisessä tapahtumassa kuullaan sekä huippututkijoiden puheenvuoroja että käydään eri alojen ammattilaisten ja opiskelijoiden yhteistä keskustelua luovuuden mahdollisuuksista työelämässä.</p>
+        </div>
+        <div class="md:w-1/2 mx-3 pr-4 w-full">  
+          <h3 class="text-4xl my-4">Kenelle?</h2>
+          <p class="w-full">Tapahtuma on tarkoitettu eri alojen ammateissa toimiville ammattilaisille, asiantuntijoille, yrittäjille ja opiskelijoille. Luovuus tuo mahdollisuuksia kaikilla aloilla!</p>
+        </div>
 
-
-
-    </section>
-    <section>
-      <div class="border bg-primary-light w-8/12 m-auto mt-10 p-5">
-        Infoa tähän Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Quidem ex quam optio consequuntur ullam aliquam, libero voluptatem
-        porro inventore culpa sequi placeat expedita repellendus corporis
-        excepturi facere quae, facilis quo!
-      </div>
-    </section>
-  </main>
-  <footer class="
-        bg-primary-color
+      </section>
+    </main>
+    <footer
+      class="
+        bg-metropolia-orange
         text-lg
         flex
         justify-center
         content-center
-        mt-6
         p-5
-      ">
-    Metropolia Karamalmi
-  </footer>
-  <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
-  <script src="counter.js"></script>
-  <script>
-    let myPlayer = document.querySelector(".video-js");
+      text-secondary-light
+      "
+    >
+      Metropolia Karamalmi
+    </footer>
 
-    console.log(myPlayer);
+    <script src="counter.js"></script>
+    <script src="hamNav.js"></script>
+    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+    <script>
+      let myPlayer = document.querySelector(".video-js");
 
-    videojs(myPlayer, {
-      controls: true,
-      autoplay: true,
-      muted: true,
-      fluid: true,
-      poster: "picture.png",
-    });
-  </script>
-</body>
+      console.log(myPlayer);
 
+      videojs(myPlayer, {
+        controls: true,
+        autoplay: false,
+        muted: true,
+        fluid: true,
+        poster: "picture.png",
+        
+      });
+    </script>
+  </body>
 </html>

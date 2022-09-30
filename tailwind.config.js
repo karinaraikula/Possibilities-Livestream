@@ -12,10 +12,12 @@ module.exports = {
     },
     extend: {
       colors: {
-        "primary-dark": "##210916ff",
-        "primary-light": "#E5C7B4ff",
-        "primary-color": "#E27A6Fff",
-        "secondary-dark": "#DF8F79ff",
+        "primary-dark": "#000000",
+        "primary-light": "#FFFFFF",
+        "secondary-dark": "#160F2E",
+        "secondary-light": "#f1f2f6",
+        "primary-color-light": "#F3DFF6",
+        "metropolia-orange": "#D36A0D",
       },
       backgroundImage: {
         header: "url('src/inspiskuva.jpg)",
