@@ -173,12 +173,21 @@
 
   <body class="bg-secondary-dark">
     <header>
-      <nav>
-        <h1 class="text-primary-dark text-right text-2xl mr-10">
-          Metropolia - Live
-        </h1>
-      </nav>
-      <div class="relative w-full h-72">
+      <section class="top-nav z-10">
+        <div>
+          Metropolia-live
+        </div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+        <ul class="menu">
+          <li> <a href="">Etusivu</a> </li>
+          <li> <a href="">Lisätietoa</a> </li>
+          <li> <a href="">Ota yhteyttä</a> </li>
+        </ul>
+      </section>
+      <div class=" w-full h-72">
         <img
           class="object-cover w-full h-full"
           src="/images/inspiskuva.jpg"
@@ -188,9 +197,8 @@
         <h2 class="absolute text-4xl text-primary-dark top-16 pl-5">
           Mahdollisuuksien maisemia
         </h2>
-        <div>
-      <p class="text-center text-lg mt-10" id="demo">ldldl</p>
-    </div>
+       
+        
       <div class="bg-primary-color md:flex">
         <div class="p-5 text-lg md:w-6/12">
           <p class="text-left">Luovuus sinun työssäsi?</p>
@@ -204,19 +212,23 @@
         </div>
       </div>
     </header>
-    <main>
+    <main class="md:mt-32 mt-48">
+      <div>
+      <p class="text-center text-lg mt-10" id="demo">countdown</p>
+    </div>
       <section
         class="
+        
           container
           border
           bg-secondary-dark
           w-auto
           m-auto
-          mt-5
           p-5
           md:flex
         "
-      >
+      >    
+    
         <div id="videoDiv" class="w-10/12 mr-5">
           <video id="my-video" class="video-js vjs-theme-city">
             <source src="images/video.mp4" type="video/mp4" />
@@ -263,7 +275,6 @@
             </button>
           </form>
         </div>
-      --->
         <div
           class="
             chat-container
@@ -363,7 +374,9 @@
               >
             </div>
           </div>
+            
         </div>
+              --->
       </section>
       <section>
         <div class="border bg-primary-light w-8/12 m-auto mt-10 p-5">
@@ -383,24 +396,28 @@
         content-center
         mt-6
         p-5
-      ">
-    Metropolia Karamalmi
-  </footer>
-  <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
-  <script src="counter.js"></script>
-  <script>
-    let myPlayer = document.querySelector(".video-js");
+        
+      "
+    >
+      Metropolia Karamalmi
+    </footer>
 
-    console.log(myPlayer);
+    <script src="counter.js"></script>
+    <script src="hamNav.js"></script>
+    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+    <script>
+      let myPlayer = document.querySelector(".video-js");
 
-    videojs(myPlayer, {
-      controls: true,
-      autoplay: true,
-      muted: true,
-      fluid: true,
-      poster: "picture.png",
-    });
-  </script>
-</body>
+      console.log(myPlayer);
 
+      videojs(myPlayer, {
+        controls: true,
+        autoplay: false,
+        muted: true,
+        fluid: true,
+        poster: "picture.png",
+        
+      });
+    </script>
+  </body>
 </html>
