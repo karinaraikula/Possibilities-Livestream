@@ -214,28 +214,27 @@
     </header>
     <main class="md:mt-32 mt-48">
       <div>
-      <p class="text-center text-lg mt-10" id="demo">countdown</p>
-    </div>
+        <p class="text-center text-lg mt-10" id="demo">countdown</p>
+      </div>
       <section
         class="
-        
           container
           border
           bg-secondary-dark
           w-auto
           m-auto
-          p-5
-          md:flex
+          lg:flex
+          lg:w-full
         "
       >    
     
-        <div id="videoDiv" class="w-10/12 mr-5">
-          <video id="my-video" class="video-js vjs-theme-city">
+        <div id="videoDiv" class="m-auto lg:w-full">
+          <video id="my-video" class="video-js vjs-theme-city vjs-big-play-centered">
             <source src="images/video.mp4" type="video/mp4" />
           </video>
         </div>
         <p></p>
-        <div id="liveChat" class="border m-auto mt-5 w-8/12 h-52 md:w-5/12">
+        <div id="liveChat" class="border m-auto mt-5 w-8/12 h-52">
           <form action="chat.html">
             <div class="form pt-4 flex flex-col">
               <label for="username" class="text-lg">Username</label>
