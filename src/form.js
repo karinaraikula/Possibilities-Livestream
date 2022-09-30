@@ -1,60 +1,53 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyASM16yYVoe4MQQ0zAWktwQZWFIGHZaaBs",
-    authDomain: "form-e88ae.firebaseapp.com",
-    databaseURL: "https://form-e88ae-default-rtdb.firebaseio.com",
-    projectId: "form-e88ae",
-    storageBucket: "form-e88ae.appspot.com",
-    messagingSenderId: "184083222098",
-    appId: "1:184083222098:web:faca360d83b98f2241598b"
-  };
+  apiKey: "AIzaSyASM16yYVoe4MQQ0zAWktwQZWFIGHZaaBs",
+  authDomain: "form-e88ae.firebaseapp.com",
+  databaseURL: "https://form-e88ae-default-rtdb.firebaseio.com",
+  projectId: "form-e88ae",
+  storageBucket: "form-e88ae.appspot.com",
+  messagingSenderId: "184083222098",
+  appId: "1:184083222098:web:faca360d83b98f2241598b",
+};
 
+firebase.initializeApp(firebaseConfig);
 
-  firebase.initializeApp(firebaseConfig);
+const contactFormDB = firebase.database().ref("contactForm");
 
-  const contactFormDB = firebase.database().ref('contactForm');
+document.getElementById("contact-form").addEventListener("submit", submitForm);
 
-  document.getElementById('contact-form').addEventListener("submit", submitForm);
+function submitForm(e) {
+  e.preventDefault();
 
+  let name = getElementVal("full-name");
+  let email = getElementVal("email-address");
+  let subject = getElementVal("subject");
+  let message = getElementVal("message");
 
-  function submitForm(e){
-      e.preventDefault();
+  saveMessages(name, email, subject, message);
 
-      var name = getElementVal('full-name');
-      var email = getElementVal('email-address');
-      var subject = getElementVal('subject');
-      var message = getElementVal('message');
-      
-      saveMessages(name, email, subject, message);
+  //alert
+  document.getElementById("alert").style.display = "block";
 
-      //alert
-      document.getElementById('alert').style.display = 'block';
+  //remove alert
+  setTimeout(() => {
+    document.getElementById("alert").style.display = "none";
+  }, 3000);
 
-    //remove alert
-    setTimeout(() => {
-        document.getElementById('alert').style.display = 'none';
-    }, 3000);
+  // reset form
 
-    // reset form
+  document.getElementById("contact-form").reset();
+}
 
-    document.getElementById('contact-form').reset();
+const saveMessages = (name, email, subject, message) => {
+  const newContactForm = contactFormDB.push();
 
-
-
-  }
-
-  const saveMessages = ((name, email, subject, message) => {
-    var newContactForm = contactFormDB.push();
-
-    newContactForm.set(
-        {
-            name: name,
-            email: email,
-            subject: subject,
-            message: message
-        }
-    )
+  newContactForm.set({
+    name: name,
+    email: email,
+    subject: subject,
+    message: message,
   });
+};
 
-  const getElementVal = (id) => {
-    return document.getElementById(id).value;
-  };
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};

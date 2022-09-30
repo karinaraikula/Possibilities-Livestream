@@ -1,39 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link href="/dist/output.css" rel="stylesheet" />
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  </head>
 
-</head>
-
-
-<body>
-    <section class="contact-us">
-        <div class="container">
-            <div id="alert" class="hidden bg-green-400 text-sm">Viestisi on lähetetty!</div>
-            <h2>Contact us</h2>
-            <p>Wanna contact us blaablaa</p>
-
-            <form id="contact-form">
-                <div class="flex-row">
-                    <input type="search" id="full-name" placeholder="Your name">
-                    <input type="search" id="email-address" placeholder="Your email-address">
-                </div>
-                <input type="search" id="subject" placeholder="Subject">
-                <textarea class="message" id="message"></textarea>
-                <button type="submit">Send message</button>
-            </form>
+  <body>
+      <header>
+      <section class="top-nav">
+        <div>
+          <img src="/images/metropolia-logo.png" alt="" class="h-14">
         </div>
-    </section>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+        <ul class="menu text-lg">
+          <li> <a href="index.html">Etusivu</a> </li>
+          <li> <a href="">Lisätietoa</a> </li>
+          <li> <a href="form.html">Ota yhteyttä</a> </li>
+        </ul>
+      </section>
+      <div class=" w-full h-80">
+        <img
+          class="object-cover w-full h-full"
+          src="/images/future.jpg"
+          alt="header picture of people walking in a futuristic corridor"
+        />
 
+        <h2 class="absolute text-4xl text-secondary-light top-28 pl-5">
+          Mahdollisuuksien maisemia
+        </h2>
+       
+        
+      <div class="bg-secondary-dark md:flex text-secondary-light" >
+        <div class="p-5 text-lg md:w-6/12">
+          <p class="text-left">Luovuus sinun työssäsi?</p>
+          <p class="text-left">Mitä luovuus työelämässä mahdollistaa?</p>
+        </div>
+        <div
+          class="bg-secondary-dark p-5 text-right text-sm md:text-lg md:w-6/12"
+        >
+          <p>#MahollisuuksienMaisemia</p>
+          <p>kulttuurihyvinvointi@metropolia.fi</p>
+        </div>
+      </div>
+    </header>
+    <section class="contact-us md:mt-32 mt-48">
+      <div class="container">
+        <div id="alert" class="hidden bg-green-400 text-sm">
+          Viestisi on lähetetty!
+        </div>
+        <h2>Contact us</h2>
+        <p>Wanna contact us blaablaa</p>
+
+        <form id="contact-form">
+          <div class="flex-row">
+            <input type="search" id="full-name" placeholder="Your name" />
+            <input
+              type="search"
+              id="email-address"
+              placeholder="Your email-address"
+            />
+          </div>
+          <input type="search" id="subject" placeholder="Subject" />
+          <textarea class="message" id="message"></textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="form.js"></script>
-
-</body>
+  </body>
 </html>
