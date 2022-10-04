@@ -10,7 +10,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
   </head>
 
-  <body>
+  <body class="h-screen">
       <header>
       <section class="top-nav">
         <div>
@@ -51,31 +51,37 @@
         </div>
       </div>
     </header>
-    <section class="contact-us md:mt-32 mt-48">
-      <div class="flex  flex-col bg-slate-400">
-        <div id="alert" class="hidden bg-green-400 text-sm">
-          Viestisi on lähetetty!
-        </div>
-      
-       
-       
-        <form id="contact-form" class="w-1/4 m-auto p-3 flex flex-col place-content-evenly">
+
+
+    <section class="contact-us md:mt-32 mt-48 bg-secondary-light md:w-4/5 sm:block md:flex border m-auto">
+
+      <div class="w-96">
+        <img src="./images/camera.jpg" alt="camera in black and white" class="">
+      </div>
+
+       <div class="w-auto m-auto">
+        <form id="contact-form" class=" sm:w-3/4 m-auto p-3 flex flex-col place-content-evenly">
            <div class="flex m-auto text-3xl">Ota yhteyttä</div>
            <div class="flex w-full flex-row m-auto">
-            <input type="search" class="rounded-md w-1/2 overflow-hidden outline-none text-primary-dark bg-zinc-300 m-3 p-2.5" id="full-name" placeholder="Nimi"/>
+            <input type="text" class="border-b w-1/2 overflow-hidden outline-none text-primary-dark m-3 p-2.5" id="full-name" placeholder="Nimi"/>
             <input
-              type="search"
+              type="text"
               id="email-address"
-              class="rounded-md w-1/2 overflow-hidden outline-none text-md bg-zinc-300 m-3 p-2.5"
+              class="border-b w-1/2 overflow-hidden outline-none text-md m-3 p-2.5"
               placeholder="Sähköpostiosoite"
             />
           </div>
-          <input type="search" class="rounded-md overflow-hidden outline-none text-md bg-zinc-300 m-3 p-2.5" id="subject" placeholder="Aihe" />
-          <textarea class="h-44 message rounded-md overflow-hidden outline-none text-md bg-zinc-300 m-3 p-2.5" id="message" placeholder="Kirjoita tähän..."></textarea>
-          <button type="submit" class="w-20 m-auto p-2 rounded-md border-2 border-black">Lähetä</button>
+          <input type="text" class="border-b overflow-hidden outline-none text-md m-3 p-2.5" id="subject" placeholder="Aihe" />
+          <textarea class="h-44 message overflow-hidden outline-none text-md border m-3 p-2.5" id="message" placeholder="Kirjoita tähän..."></textarea>
+          <button type="submit" class="w-20 m-auto p-2 rounded-md border-2 ">Lähetä</button>
         </form>
+      </div>
 
     </section>
+
+        <div class="flex flex-col bg-slate-400">
+        <div id="alert" class="hidden bg-green-400 text-sm">Viestisi on lähetetty!</div>
+      </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="form.js"></script>

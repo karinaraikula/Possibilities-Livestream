@@ -5,20 +5,22 @@
     vertical-align: center;
     text-align: center;
   }
-
   h3 {
   }
-
   html,
   body {
     margin: 0;
     height: 100%;
   }
-
   * {
     box-sizing: border-box;
   }
-
+}
+@layer components {
+}
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
   .top-nav {
     display: flex;
     flex-direction: row;
@@ -139,8 +141,40 @@
     font-family: "Josefin Sans", sans-serif;
     font-style: bold;
   }
+
+  #full-name:hover {
+    border-bottom: 1px solid #bf55ff;
+    transition: border 0.5s linear;
+  }
+  #full-name:focus {
+    border-bottom: 1px solid #160f2e;
+    transition: border 1s linear;
+  }
+
+  #email-address:hover {
+    border-bottom: 1px solid #bf55ff;
+    transition: border 0.5s linear;
+  }
+  #email-address:focus {
+    border-bottom: 1px solid #160f2e;
+    transition: border 1s linear;
+  }
+
+  #subject:hover {
+    border-bottom: 1px solid #bf55ff;
+    transition: border 0.5s linear;
+  }
+  #subject:focus {
+    border-bottom: 1px solid #160f2e;
+    transition: border 1s linear;
+  }
+
+  #message:hover {
+    border: 1px solid #bf55ff;
+    transition: border 1s linear;
+  }
+  #message:focus {
+    border: 1px solid #160f2e;
+    transition: border 1s linear;
+  }
 }
-@layer components {
-}
-@tailwind components;
-@tailwind utilities;
