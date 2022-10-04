@@ -52,27 +52,29 @@
       </div>
     </header>
     <section class="contact-us md:mt-32 mt-48">
-      <div class="container">
+      <div class="flex  flex-col bg-slate-400">
         <div id="alert" class="hidden bg-green-400 text-sm">
           Viestisi on lähetetty!
         </div>
-        <h2>Contact us</h2>
-        <p>Wanna contact us blaablaa</p>
-
-        <form id="contact-form">
-          <div class="flex-row">
-            <input type="search" id="full-name" placeholder="Your name" />
+      
+       
+       
+        <form id="contact-form" class="w-1/4 m-auto p-3 flex flex-col place-content-evenly">
+           <div class="flex m-auto text-3xl">Ota yhteyttä</div>
+           <div class="flex w-full flex-row m-auto">
+            <input type="search" class="rounded-md w-1/2 overflow-hidden outline-none text-primary-dark bg-zinc-300 m-3 p-2.5" id="full-name" placeholder="Nimi"/>
             <input
               type="search"
               id="email-address"
-              placeholder="Your email-address"
+              class="rounded-md w-1/2 overflow-hidden outline-none text-md bg-zinc-300 m-3 p-2.5"
+              placeholder="Sähköpostiosoite"
             />
           </div>
-          <input type="search" id="subject" placeholder="Subject" />
-          <textarea class="message" id="message"></textarea>
-          <button type="submit">Send message</button>
+          <input type="search" class="rounded-md overflow-hidden outline-none text-md bg-zinc-300 m-3 p-2.5" id="subject" placeholder="Aihe" />
+          <textarea class="h-44 message rounded-md overflow-hidden outline-none text-md bg-zinc-300 m-3 p-2.5" id="message" placeholder="Kirjoita tähän..."></textarea>
+          <button type="submit" class="w-20 m-auto p-2 rounded-md border-2 border-black">Lähetä</button>
         </form>
-      </div>
+
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
