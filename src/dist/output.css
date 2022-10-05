@@ -797,6 +797,22 @@ html,
   height: 25rem;
 }
 
+.h-\[20rem\] {
+  height: 20rem;
+}
+
+.h-\[18rem\] {
+  height: 18rem;
+}
+
+.h-\[16rem\] {
+  height: 16rem;
+}
+
+.h-\[17rem\] {
+  height: 17rem;
+}
+
 .max-h-min {
   max-height: -webkit-min-content;
   max-height: -moz-min-content;
