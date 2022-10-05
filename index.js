@@ -19,17 +19,18 @@ const io = socketio(server);
 app.use(express.static(path.join(__dirname, "src")));
 
 io.on("connection", (socket) => {
-  socket.on('joinRoom', ({ username, room }) => {
-        const user = userJoin(socket.id, username, room);
+  socket.on("joinRoom", ({ username, room }) => {
+    const user = userJoin(socket.id, username, room);
 
-        socket.join(user.room);
-        
+    socket.join(user.room);
+    /*
         io.to(user.room).emit('roomUsers', {
             room: user.room,
             users: getRoomUsers(user.room)
         });
-    });
-    
+        */
+  });
+
   socket.on("chatMessage", (msg) => {
     const user = getCurrentUser(socket.id);
 
@@ -38,18 +39,20 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     const user = userLeave(socket.id);
-
+/*
     if (user) {
       io.to(user.room).emit(
         "message",
         formatMessage(`${user.username} disconnected`)
       );
     }
-
+    */
+    /*
     io.to(user.room).emit("roomUsers", {
       room: user.room,
       users: getRoomUsers(user.room),
     });
+    */
   });
 });
 
