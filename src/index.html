@@ -246,7 +246,7 @@
             <h1 class="text-primary-color text-2xl">Chat</h1>
             <h2 id="room-name" class="text-primary-color text-2xl pl-1"></h2>
           </div>
-          <form>
+          <form id="userForm">
             <div class="form pt-4 flex flex-col">
               <label for="username" class="text-lg">Username</label>
               <input
@@ -259,10 +259,11 @@
               />
             </div>     
             <button
-            id="usernameButton"
+            id="join"
               type="submit"
 
               class="
+                text-black
                 bt
                 p-2
                 ml-auto
@@ -277,6 +278,7 @@
             >
               Join Chat
             </button>
+            <p id="nameError"></p>
           </form> 
 
             
@@ -284,7 +286,7 @@
                 <div class=" chat-form-container m-w-sm">
                   <div class="chat-messages"></div>
                   <form
-                    id="chat-form"
+                    id="chatForm"
                     action=""
                     class="
                       items-center
@@ -308,13 +310,14 @@
                         rounded-lg
                         border border-gray-300
                       "
-                      id="msg"
+                      id="message"
                       type="text"
                       autocomplete="off"
                       placeholder="Enter message"
                       required
                     />
                     <button
+                    id="send"
                       class="
                         btn
                         inline-flex
@@ -339,6 +342,7 @@
                       </svg>
                     </button>
                   </form>
+                  <ul id="allMessages" style="list-style-type: none"></ul>
                 </div>
       </section>
 
@@ -378,7 +382,8 @@
         <script src="/socket.io/socket.io.js"></script>
     <script src="counter.js"></script>
     <script src="hamNav.js"></script>
-    <script type="module" src="chat.js"></script>
+    <script src="chat.js"></script>
+
 
 
     <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
