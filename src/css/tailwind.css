@@ -256,4 +256,7 @@
   .display-none {
     display: none;
   }
+  .messageStyle {
+    color: #fff;
+  }
 }
