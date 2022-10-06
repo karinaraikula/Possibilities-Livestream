@@ -1,61 +1,71 @@
 "use strict";
-const chatForm = document.getElementById("chat-form");
-const chatMessages = document.querySelector(".chat-messages");
-const roomName = document.getElementById("room-name");
-const userList = document.getElementById("users");
 
-const parsedSearch =
-  location.search.substring(0, 1) === "?"
-    ? location.search.substring(1, location.search.length)
-    : location.search;
-const { username } = Qs.parse(parsedSearch);
-const room = 1;
-console.log(username, room);
+const socket = io("http://localhost:3000");
 
-const socket = io();
+const userJoin = document.getElementById("userForm");
+const username = document.getElementById("username");
+const form = document.getElementById("chatForm");
+const input = document.getElementById("message");
+const messages = document.getElementById("allMessages");
 
-socket.emit("joinRoom", { username, room });
+document.getElementById("join").disabled = false;
+document.getElementById("send").disabled = true;
 
-socket.on("roomUsers", ({ room, users }) => {
-  outputRoomName(room);
-  outputUsers(users);
-});
 
-socket.on("message", (message) => {
-  console.log(message);
-  outputMessage(message);
+let user;
+let userNames = [];
 
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-});
 
-chatForm.addEventListener("submit", (e) => {
+userJoin.addEventListener("submit", (e) => {
   e.preventDefault();
-  chatForm.classList.remove("hidden");
-  chatForm.classList.add("flex");
-
-  const msg = e.target.elements.msg.value;
-  socket.emit("chatMessage", msg);
-
-  e.target.elements.msg.value = "";
-  e.target.elements.msg.focus();
+  if (username.value) {
+    user = username.value;
+    socket.emit("join", user);
+    chatTrue();
+  }
 });
 
-function outputMessage(message) {
-  const div = document.createElement("div");
-  div.classList.add("message");
-  div.innerHTML = `<div class="flex bg-zinc-800"><p class="meta text-violet-400 ">${message.username}:</p>
-    <p class="rounded-lg text-secondary-light ml-2">
-        ${message.text}
-    </p> </div>`;
-  document.querySelector(".chat-messages").appendChild(div);
-}
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (input.value) {
+    const pack = { message: user + ": " + input.value };
+    socket.emit("message", pack);
+    input.value = "";
+  }
+});
 
-function outputRoomName(room) {
-  roomName.innerText = room;
-}
+socket.on("message", (msg) => {
+  const item = document.createElement("li");
+  item.textContent = msg;
+  messages.appendChild(item);
+  window.scrollTo(0, document.body.scrollHeight);
+});
 
-function outputUsers(users) {
-  userList.innerHTML = `
-        ${users.map((user) => `<li>${user.username}</li>`).join("")}
-    `;
+socket.on("new chat user", (msg) => {
+  console.log(msg, " added to user list");
+  userNames.push(msg);
+  console.log("user list: ", userNames);
+
+});
+
+socket.on("name taken", (msg) => {
+  console.log(msg, " name already taken");
+  chatFalse();
+});
+
+
+socket.on("remove from usernames", (name) => {
+  userNames = userNames.filter((item) => item !== `${name}`);
+  console.log("user list: ", userNames);
+});
+
+function chatTrue() {
+  document.getElementById("join").disabled = true;
+  document.getElementById("send").disabled = false;
+  document.getElementById("nameError").innerText = "";
+}
+function chatFalse() {
+  document.getElementById("join").disabled = false;
+  document.getElementById("send").disabled = true;
+  document.getElementById("nameError").innerText = "Chattinimi on jo käytössä";
 }

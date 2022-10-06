@@ -243,7 +243,9 @@
           <div class="flex flex-row justify-center">
             <h1 class="text-primary-color text-2xl">Live-Chat</h1>
           </div>
-          <form class="">
+
+          <form id="userForm">
+
             <div class="form pt-4 flex flex-col">
               <label for="username" class="text-lg">Username</label>
               <input
@@ -256,9 +258,10 @@
               />
             </div>     
             <button
-            id="usernameButton"
+            id="join"
               type="submit"
               class="
+                text-black
                 bt
                 p-2
                 ml-auto
@@ -273,23 +276,17 @@
             >
               Join Chat
             </button>
+            <p id="nameError"></p>
           </form> 
 
-          
-          <div class=" chat-form-container border-white">
-            <div class="chat-messages overflow-scroll h-[17rem] pb-6"></div>
-            <form
-                id="chat-form"
-                action=""
-                class="
-                align-bottom 
-                mt-auto
-                flex
-                items-center
-                w-full
-                "
-                >
-                  <input
+
+            
+
+                <div class=" chat-form-container m-w-sm">
+                  <div class="chat-messages"></div>
+                  <form
+                    id="chatForm"
+                    action=""
                     class="
                     align-bottom
                     mt-auto
@@ -300,13 +297,29 @@
                     text-sm text-black
                     border border-gray-300
                     "
-                    id="msg"
-                    type="text"
-                    autocomplete="off"
-                    placeholder="Enter message"
-                    required
+
+                  >
+                    <input
+                      class="
+                      
+                        block
+                        p-2.5
+                        ml-1
+                        mr-1
+                        w-full
+                        text-sm text-black
+                        bg-white
+                        rounded-lg
+                        border border-gray-300
+                      "
+                      id="message"
+                      type="text"
+                      autocomplete="off"
+                      placeholder="Enter message"
+                      required
                     />
-                  <button
+                    <button
+                    id="send"
                       class="
                         btn
                         mx-2
@@ -327,10 +340,12 @@
                           d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
                         ></path>
                       </svg>
-                  </button>
-            </form>
-          </div>
-        </div>
+
+                    </button>
+                  </form>
+                  <ul id="allMessages" style="list-style-type: none"></ul>
+                </div>
+
       </section>
       <section  class="bg-secondary-light w-full m-auto mt-10 p-5 md:flex justify-evenly text-lg text-primary-dark">
         <div class="md:w-1/2 mx-3 pr-4 w-full ">
@@ -356,30 +371,35 @@
     >
       <img src="/images/metropolia-logo.png" alt="" class="h-14" />
     </footer>
-      <script 
-      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.1.2/qs.min.js" 
-      integrity="sha512-LIxZvLf3cF72wbVxt+3ajwseTY82yjgyVvAN2nQ2B037JtZPaVZRkaukU/JmG1EkbFmD9a7Wx5VAcosed0/u6g==" 
-      crossorigin="anonymous">
-      </script>
-      <script src="/socket.io/socket.io.js"></script>
-      <script src="counter.js"></script>
-      <script src="hamNav.js"></script>
-      <script src="chat.js"></script>
-      <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
-      <script>
-        let myPlayer = document.querySelector(".video-js");
 
-        console.log(myPlayer);
+ <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.1.2/qs.min.js" 
+    integrity="sha512-LIxZvLf3cF72wbVxt+3ajwseTY82yjgyVvAN2nQ2B037JtZPaVZRkaukU/JmG1EkbFmD9a7Wx5VAcosed0/u6g==" 
+    crossorigin="anonymous">
+    </script>
+        <script src="/socket.io/socket.io.js"></script>
+    <script src="counter.js"></script>
+    <script src="hamNav.js"></script>
+    <script src="chat.js"></script>
 
-        videojs(myPlayer, {
-          controls: true,
-          autoplay: false,
-          muted: true,
-          fluid: true,
-          poster: "picture.png",
-          
-        });
-      </script>
+
+
+    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+    <script>
+      let myPlayer = document.querySelector(".video-js");
+
+      console.log(myPlayer);
+
+      videojs(myPlayer, {
+        controls: true,
+        autoplay: false,
+        muted: true,
+        fluid: true,
+        poster: "picture.png",
+        
+      });
+    </script>
+
   </body>
   
 </html>

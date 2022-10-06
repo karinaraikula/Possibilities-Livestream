@@ -1,58 +1,41 @@
 "use strict";
+const path = require('path');
+const http = require('http');
+const express = require('express');
+const socketio = require('socket.io');
 
-const path = require("path");
-const http = require("http");
-const express = require("express");
-const socketio = require("socket.io");
-const { formatMessage } = require("./utils/messages");
-const {
-  userJoin,
-  getCurrentUser,
-  userLeave,
-  getRoomUsers,
-} = require("./utils/users");
 
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-app.use(express.static(path.join(__dirname, "src")));
+app.use(express.static(path.join(__dirname, 'src')));
+
+let users = [];
 
 io.on("connection", (socket) => {
-  socket.on("joinRoom", ({ username, room }) => {
-    const user = userJoin(socket.id, username, room);
 
-    socket.join(user.room);
-    /*
-        io.to(user.room).emit('roomUsers', {
-            room: user.room,
-            users: getRoomUsers(user.room)
-        });
-        */
-  });
-
-  socket.on("chatMessage", (msg) => {
-    const user = getCurrentUser(socket.id);
-
-    io.to(user.room).emit("message", formatMessage(user.username, msg));
+  socket.on("join", (username) => {
+    if (users.some((item) => item.username === `${username}`)) {
+      io.emit("Name is already taken", username);
+    } else {
+      console.log(username, "is available");
+      users.push({ username: username, id: socket.id });
+      io.emit("new user", username);
+    }
   });
 
   socket.on("disconnect", () => {
-    const user = userLeave(socket.id);
-/*
-    if (user) {
-      io.to(user.room).emit(
-        "message",
-        formatMessage(`${user.username} disconnected`)
-      );
-    }
-    */
-    /*
-    io.to(user.room).emit("roomUsers", {
-      room: user.room,
-      users: getRoomUsers(user.room),
-    });
-    */
+    const disconnectedData = users.find((item) => item.id === `${socket.id}`);
+    const disconnectedName = disconnectedData.username;
+    io.emit("remove from usernames", disconnectedName);
+    users = users.filter((item) => item.id !== `${socket.id}`);
+  });
+
+  socket.on("message", ({ message }) => {
+    console.log({ message });
+    io.emit("message", message);
+
   });
 });
 
