@@ -1,20 +1,18 @@
 "use strict";
-const path = require('path');
-const http = require('http');
-const express = require('express');
-const socketio = require('socket.io');
-
+const path = require("path");
+const http = require("http");
+const express = require("express");
+const socketio = require("socket.io");
 
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, "src")));
 
 let users = [];
 
 io.on("connection", (socket) => {
-
   socket.on("join", (username) => {
     if (users.some((item) => item.username === `${username}`)) {
       io.emit("Name is already taken", username);
@@ -26,16 +24,15 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", () => {
-    const disconnectedData = users.find((item) => item.id === `${socket.id}`);
-    const disconnectedName = disconnectedData.username;
-    io.emit("remove from usernames", disconnectedName);
-    users = users.filter((item) => item.id !== `${socket.id}`);
+    const index = users.findIndex((user) => user.id === socket.id);
+    if (index !== -1) {
+      return users.splice(index, 1)[0];
+    }
   });
 
   socket.on("message", ({ message }) => {
     console.log({ message });
     io.emit("message", message);
-
   });
 });
 

@@ -8,9 +8,6 @@ const form = document.getElementById("chatForm");
 const input = document.getElementById("message");
 const messages = document.getElementById("allMessages");
 
-document.getElementById("join").disabled = false;
-document.getElementById("send").disabled = true;
-
 let user;
 let userNames = [];
 
@@ -20,6 +17,8 @@ userJoin.addEventListener("submit", (e) => {
     user = username.value;
     socket.emit("join", user);
     chatTrue();
+    userJoin.classList.add("hidden");
+    form.classList.remove("hidden");
   }
 });
 
@@ -51,12 +50,12 @@ socket.on("name taken", (msg) => {
   console.log(msg, " name already taken");
   chatFalse();
 });
-
+/*
 socket.on("remove from usernames", (name) => {
   userNames = userNames.filter((item) => item !== `${name}`);
   console.log("user list: ", userNames);
 });
-
+*/
 function chatTrue() {
   document.getElementById("join").disabled = true;
   document.getElementById("send").disabled = false;

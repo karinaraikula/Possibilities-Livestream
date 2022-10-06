@@ -713,6 +713,10 @@ html,
   height: 17rem;
 }
 
+.h-\[25rem\] {
+  height: 25rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1048,6 +1052,11 @@ html,
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-purple-200 {
+  --tw-text-opacity: 1;
+  color: rgb(233 213 255 / var(--tw-text-opacity));
 }
 
 .outline-none {
