@@ -15,15 +15,18 @@ let users = [];
 io.on("connection", (socket) => {
   socket.on("join", (username) => {
     if (users.some((item) => item.username === `${username}`)) {
-      io.emit("Name is already taken", username);
+      console.log(username, "name found from users");
+      io.emit("name exists", username);
     } else {
       console.log(username, "is available");
       users.push({ username: username, id: socket.id });
+      console.log("new users connected: ", users);
       io.emit("new user", username);
     }
   });
 
   socket.on("disconnect", () => {
+    console.log("a user disconnected", socket.id);
     const index = users.findIndex((user) => user.id === socket.id);
     if (index !== -1) {
       return users.splice(index, 1)[0];

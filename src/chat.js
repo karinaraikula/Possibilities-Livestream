@@ -40,14 +40,14 @@ socket.on("message", (msg) => {
   messages.scrollTop = messages.scrollHeight;
 });
 
-socket.on("new chat user", (msg) => {
-  console.log(msg, " added to user list");
+socket.on("new user", (msg) => {
+  console.log(msg, " added to list");
   userNames.push(msg);
-  console.log("user list: ", userNames);
+  console.log("List of users: ", userNames);
 });
 
-socket.on("name taken", (msg) => {
-  console.log(msg, " name already taken");
+socket.on("name exists", (msg) => {
+  console.log(msg, " name already exists");
   chatFalse();
 });
 /*
