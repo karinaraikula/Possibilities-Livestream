@@ -11,10 +11,8 @@ const messages = document.getElementById("allMessages");
 document.getElementById("join").disabled = false;
 document.getElementById("send").disabled = true;
 
-
 let user;
 let userNames = [];
-
 
 userJoin.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -31,28 +29,28 @@ form.addEventListener("submit", (e) => {
     const pack = { message: user + ": " + input.value };
     socket.emit("message", pack);
     input.value = "";
+    input.focus();
   }
 });
 
 socket.on("message", (msg) => {
   const item = document.createElement("li");
   item.textContent = msg;
+  item.classList.add("messageStyle");
   messages.appendChild(item);
-  window.scrollTo(0, document.body.scrollHeight);
+  messages.scrollTop = messages.scrollHeight;
 });
 
 socket.on("new chat user", (msg) => {
   console.log(msg, " added to user list");
   userNames.push(msg);
   console.log("user list: ", userNames);
-
 });
 
 socket.on("name taken", (msg) => {
   console.log(msg, " name already taken");
   chatFalse();
 });
-
 
 socket.on("remove from usernames", (name) => {
   userNames = userNames.filter((item) => item !== `${name}`);

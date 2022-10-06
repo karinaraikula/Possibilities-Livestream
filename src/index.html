@@ -198,7 +198,7 @@
           alt="header picture of people walking in a futuristic corridor"
         />
 
-        <h2 class="absolute text-4xl text-secondary-light top-28 pl-5">
+        <h2 class="absolute text-4xl bg-primary-color-light top-28 pl-5">
           Mahdollisuuksien maisemia
         </h2>
        </div>
@@ -229,8 +229,7 @@
           ml-0
           lg:flex
           lg:w-full
-          lg:px-10
-          
+          lg:px-10 
         "
       >    
         <div id="videoDiv" class="h-full lg:w-full bg-primary-dark">
@@ -256,39 +255,33 @@
                 placeholder="Enter username..."
                 required
               />
-            </div>     
-            <button
-            id="join"
-              type="submit"
-              class="
-                text-black
-                bt
-                p-2
-                ml-auto
-                mr-auto
-                mt-4
-                flex
-                justify-center
-                rounded-full
-                text-white
-                bg-primary-color
-                hover:bg-primary-light"
-            >
+            </div>  
+               
+            <button id="join" type="submit" class="button-20">
               Join Chat
             </button>
             <p id="nameError"></p>
           </form> 
 
-
-            
-
                 <div class=" chat-form-container m-w-sm">
-                  <div class="chat-messages"></div>
+                  <ul id="allMessages"  class="list-none h-[17rem] overflow-scroll  pb-6"></ul>
+
+                  <div class="chat-messages  "></div>
+                  
                   <form
                     id="chatForm"
                     action=""
                     class="
-                    align-bottom
+                    align-bottom 
+                    mt-auto
+                    flex
+                    items-center
+                    w-full
+                    "
+                  >
+                    <input
+                      class="
+                      align-bottom
                     mt-auto
                     block
                     p-2.5
@@ -296,21 +289,6 @@
                     w-full
                     text-sm text-black
                     border border-gray-300
-                    "
-
-                  >
-                    <input
-                      class="
-                      
-                        block
-                        p-2.5
-                        ml-1
-                        mr-1
-                        w-full
-                        text-sm text-black
-                        bg-white
-                        rounded-lg
-                        border border-gray-300
                       "
                       id="message"
                       type="text"
@@ -343,7 +321,6 @@
 
                     </button>
                   </form>
-                  <ul id="allMessages" style="list-style-type: none"></ul>
                 </div>
 
       </section>

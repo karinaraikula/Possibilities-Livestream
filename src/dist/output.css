@@ -613,16 +613,22 @@ html,
   margin-right: 0.5rem;
 }
 
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .ml-1 {
   margin-left: 0.25rem;
 }
 
 .mr-1 {
   margin-right: 0.25rem;
-}
-
-.ml-2 {
-  margin-left: 0.5rem;
 }
 
 .mt-48 {
@@ -665,12 +671,8 @@ html,
   margin-top: 2.5rem;
 }
 
-.mt-7 {
-  margin-top: 1.75rem;
-}
-
-.ml-7 {
-  margin-left: 1.75rem;
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .block {
@@ -725,10 +727,6 @@ html,
 
 .h-\[17rem\] {
   height: 17rem;
-}
-
-.h-60 {
-  height: 15rem;
 }
 
 .min-h-screen {
@@ -786,6 +784,10 @@ html,
   cursor: pointer;
 }
 
+.list-none {
+  list-style-type: none;
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -808,6 +810,10 @@ html,
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
 }
 
 .overflow-hidden {
@@ -854,10 +860,6 @@ html,
   border-bottom-width: 1px;
 }
 
-.border-t-2 {
-  border-top-width: 2px;
-}
-
 .border-rose-500 {
   --tw-border-opacity: 1;
   border-color: rgb(244 63 94 / var(--tw-border-opacity));
@@ -873,16 +875,6 @@ html,
   border-color: rgb(24 24 27 / var(--tw-border-opacity));
 }
 
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-t-zinc-900 {
-  --tw-border-opacity: 1;
-  border-top-color: rgb(24 24 27 / var(--tw-border-opacity));
-}
-
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -893,19 +885,14 @@ html,
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-zinc-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
-}
-
 .bg-secondary-dark {
   --tw-bg-opacity: 1;
-  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+  background-color: rgb(54 64 68 / var(--tw-bg-opacity));
 }
 
 .bg-secondary-light {
   --tw-bg-opacity: 1;
-  background-color: rgb(241 242 246 / var(--tw-bg-opacity));
+  background-color: rgb(163 179 188 / var(--tw-bg-opacity));
 }
 
 .bg-primary-light {
@@ -915,7 +902,17 @@ html,
 
 .bg-primary-dark {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(31 33 34 / var(--tw-bg-opacity));
+}
+
+.bg-zinc-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+}
+
+.bg-primary-color-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 237 240 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-40 {
@@ -978,6 +975,10 @@ html,
 
 .pt-4 {
   padding-top: 1rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
 }
 
 .pb-6 {
@@ -1050,29 +1051,14 @@ html,
   color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
-.text-violet-400 {
-  --tw-text-opacity: 1;
-  color: rgb(167 139 250 / var(--tw-text-opacity));
-}
-
 .text-secondary-light {
   --tw-text-opacity: 1;
-  color: rgb(241 242 246 / var(--tw-text-opacity));
+  color: rgb(163 179 188 / var(--tw-text-opacity));
 }
 
 .text-primary-dark {
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-zinc-200 {
-  --tw-text-opacity: 1;
-  color: rgb(228 228 231 / var(--tw-text-opacity));
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(31 33 34 / var(--tw-text-opacity));
 }
 
 .text-black {
@@ -1080,9 +1066,23 @@ html,
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-violet-400 {
+  --tw-text-opacity: 1;
+  color: rgb(167 139 250 / var(--tw-text-opacity));
+}
+
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .top-nav {
@@ -1326,10 +1326,6 @@ html,
   pointer-events: none;
 }
 
-.display-none {
-  display: none;
-}
-
 .hover\:bg-blue-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
@@ -1402,10 +1398,6 @@ html,
     display: block;
   }
 
-  .sm\:w-4\/5 {
-    width: 80%;
-  }
-
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -1433,8 +1425,8 @@ html,
     width: 66.666667%;
   }
 
-  .md\:w-full {
-    width: 100%;
+  .md\:w-1\/2 {
+    width: 50%;
   }
 
   .md\:text-lg {
