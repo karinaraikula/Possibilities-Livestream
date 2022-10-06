@@ -53,6 +53,7 @@ socket.on("name taken", (msg) => {
   chatFalse();
 });
 
+
 socket.on("remove from usernames", (name) => {
   userNames = userNames.filter((item) => item !== `${name}`);
   console.log("user list: ", userNames);

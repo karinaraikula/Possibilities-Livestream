@@ -30,11 +30,15 @@ function submitForm(e) {
   //remove alert
   setTimeout(() => {
     document.getElementById("alert").style.display = "none";
-  }, 3000);
+  }, 5000);
 
   // reset form
-
   document.getElementById("contact-form").reset();
+
+  const modalClose = document.getElementById("modal-close");
+  modalClose.addEventListener("click", () => {
+    document.getElementById("alert").style.display = "none";
+  });
 }
 
 const saveMessages = (name, email, subject, message) => {

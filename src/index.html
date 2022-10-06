@@ -201,7 +201,7 @@
         <h2 class="absolute text-4xl text-secondary-light top-28 pl-5">
           Mahdollisuuksien maisemia
         </h2>
-       
+       </div>
         
       <div class="bg-secondary-dark md:flex text-secondary-light" >
         <div class="p-5 text-lg md:w-6/12">
@@ -215,10 +215,12 @@
           <p>kulttuurihyvinvointi@metropolia.fi</p>
         </div>
       </div>
+    
     </header>
-    <main class="md:mt-32 mt-48">
+
+    <main class="">
       <div id="counter-div">
-        <p class="text-center lg:text-4xl sm:text-2xl pb-6 text-primary-dark" id="demo">. . .</p>
+        <p class="text-center my-6 lg:text-4xl sm:text-2xl text-primary-dark" id="demo">. . .</p>
       </div>
       <section
         class="
@@ -228,25 +230,22 @@
           lg:flex
           lg:w-full
           lg:px-10
+          
         "
       >    
-        <div id="videoDiv" class="m-auto h-full lg:w-full bg-primary-dark">
+        <div id="videoDiv" class="h-full lg:w-full bg-primary-dark">
           <video id="my-video" class="video-js vjs-theme-city vjs-big-play-centered">
             <source src="images/video.mp4" type="video/mp4" />
           </video>
         </div>
-        <p></p>
 
-
-
-
-
-        <div id="liveChat" class="border m-auto mt-5 w-8/12 h-96">
+        <div id="liveChat" class="m-auto border-zinc-900 border-4 rounded-sm p-4 lg:ml-5 md:w-8/12 xs:w-full bg-zinc-800 h-[32rem]">
           <div class="flex flex-row justify-center">
-            <h1 class="text-primary-color text-2xl">Chat</h1>
-            <h2 id="room-name" class="text-primary-color text-2xl pl-1"></h2>
+            <h1 class="text-primary-color text-2xl">Live-Chat</h1>
           </div>
+
           <form id="userForm">
+
             <div class="form pt-4 flex flex-col">
               <label for="username" class="text-lg">Username</label>
               <input
@@ -261,7 +260,6 @@
             <button
             id="join"
               type="submit"
-
               class="
                 text-black
                 bt
@@ -281,6 +279,7 @@
             <p id="nameError"></p>
           </form> 
 
+
             
 
                 <div class=" chat-form-container m-w-sm">
@@ -289,13 +288,16 @@
                     id="chatForm"
                     action=""
                     class="
-                      items-center
-                      py-2
-                      w-80
-                      bg-gray-100
-                      dark:bg-gray-70
-                      border-t-4
+                    align-bottom
+                    mt-auto
+                    block
+                    p-2.5
+                    rounded-sm
+                    w-full
+                    text-sm text-black
+                    border border-gray-300
                     "
+
                   >
                     <input
                       class="
@@ -320,14 +322,12 @@
                     id="send"
                       class="
                         btn
+                        mx-2
                         inline-flex
                         justify-center
-                        p-2
-                        mr-1
                         text-primary-dark
                         rounded-full
                         cursor-pointer
-                        hover:bg-primary-light
                       "
                     >
                       <svg
@@ -340,28 +340,25 @@
                           d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
                         ></path>
                       </svg>
+
                     </button>
                   </form>
                   <ul id="allMessages" style="list-style-type: none"></ul>
                 </div>
+
       </section>
-
-
-
-
-
-
       <section  class="bg-secondary-light w-full m-auto mt-10 p-5 md:flex justify-evenly text-lg text-primary-dark">
         <div class="md:w-1/2 mx-3 pr-4 w-full ">
-          <h3 class="text-4xl my-4">Mikä tapahtuma</h2>
+          <h3 class="text-4xl my-4">Mikä tapahtuma</h3>
           <p class="w-full">Miten luovuuden mahdollisuuksia huomioiva näkökulma työelämässä eri aloilla ja ammateissa otetaan käyttöön? Miten luovuuden huomiointi edistää kestävää, hyvää työelämää ja tulevaisuutta? Moniäänisessä tapahtumassa kuullaan sekä huippututkijoiden puheenvuoroja että käydään eri alojen ammattilaisten ja opiskelijoiden yhteistä keskustelua luovuuden mahdollisuuksista työelämässä.</p>
         </div>
         <div class="md:w-1/2 mx-3 pr-4 w-full">  
-          <h3 class="text-4xl my-4">Kenelle?</h2>
+          <h3 class="text-4xl my-4">Kenelle?</h3>
           <p class="w-full">Tapahtuma on tarkoitettu eri alojen ammateissa toimiville ammattilaisille, asiantuntijoille, yrittäjille ja opiskelijoille. Luovuus tuo mahdollisuuksia kaikilla aloilla!</p>
         </div>
       </section>
     </main>
+
     <footer
       class="
         bg-primary-light
@@ -372,8 +369,9 @@
         p-5
       "
     >
-      <img src="/images/metropolia-logo.png" alt="" class="h-14">
+      <img src="/images/metropolia-logo.png" alt="" class="h-14" />
     </footer>
+
  <script 
     src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.1.2/qs.min.js" 
     integrity="sha512-LIxZvLf3cF72wbVxt+3ajwseTY82yjgyVvAN2nQ2B037JtZPaVZRkaukU/JmG1EkbFmD9a7Wx5VAcosed0/u6g==" 
@@ -401,5 +399,7 @@
         
       });
     </script>
+
   </body>
+  
 </html>
