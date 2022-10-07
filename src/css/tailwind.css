@@ -259,4 +259,10 @@
   .messageStyle {
     color: #fff;
   }
+  #join:disabled {
+    display: none;
+  }
+  #send:disabled {
+    display: none;
+  }
 }

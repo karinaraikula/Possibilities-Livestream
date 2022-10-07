@@ -17,8 +17,6 @@ userJoin.addEventListener("submit", (e) => {
     user = username.value;
     socket.emit("join", user);
     chatTrue();
-    userJoin.classList.add("hidden");
-    form.classList.remove("hidden");
   }
 });
 
@@ -56,13 +54,14 @@ socket.on("remove from usernames", (name) => {
   console.log("user list: ", userNames);
 });
 */
-function chatTrue() {
+const chatTrue = () => {
   document.getElementById("join").disabled = true;
   document.getElementById("send").disabled = false;
   document.getElementById("nameError").innerText = "";
-}
-function chatFalse() {
+};
+const chatFalse = () => {
   document.getElementById("join").disabled = false;
   document.getElementById("send").disabled = true;
-  document.getElementById("nameError").innerText = "Chattinimi on jo käytössä";
-}
+  document.getElementById("nameError").innerText =
+    "Chattinimi on jo käytössä";
+};
