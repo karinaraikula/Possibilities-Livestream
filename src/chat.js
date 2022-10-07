@@ -17,8 +17,6 @@ userJoin.addEventListener("submit", (e) => {
     user = username.value;
     socket.emit("join", user);
     chatTrue();
-    userJoin.classList.add("hidden");
-    form.classList.remove("hidden");
   }
 });
 
@@ -50,12 +48,14 @@ socket.on("name exists", (msg) => {
   console.log(msg, " name already exists");
   chatFalse();
 });
+
 /*
 socket.on("remove from usernames", (name) => {
   userNames = userNames.filter((item) => item !== `${name}`);
   console.log("user list: ", userNames);
 });
 */
+
 function chatTrue() {
   document.getElementById("join").disabled = true;
   document.getElementById("send").disabled = false;
