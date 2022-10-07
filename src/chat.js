@@ -48,13 +48,15 @@ socket.on("name exists", (msg) => {
   console.log(msg, " name already exists");
   chatFalse();
 });
+
 /*
 socket.on("remove from usernames", (name) => {
   userNames = userNames.filter((item) => item !== `${name}`);
   console.log("user list: ", userNames);
 });
 */
-const chatTrue = () => {
+
+function chatTrue() {
   document.getElementById("join").disabled = true;
   document.getElementById("send").disabled = false;
   document.getElementById("nameError").innerText = "";
