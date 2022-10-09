@@ -7,6 +7,7 @@ const username = document.getElementById("username");
 const form = document.getElementById("chatForm");
 const input = document.getElementById("message");
 const messages = document.getElementById("allMessages");
+form.style.visibility = "hidden";
 
 let user;
 let userNames = [];
@@ -16,7 +17,6 @@ userJoin.addEventListener("submit", (e) => {
   if (username.value) {
     user = username.value;
     socket.emit("join", user);
-    chatTrue();
   }
 });
 
@@ -44,9 +44,15 @@ socket.on("new user", (msg) => {
   console.log("List of users: ", userNames);
 });
 
+socket.on("open chat", (msg) => {
+  chatTrue();
+});
+
 socket.on("name exists", (msg) => {
   console.log(msg, " name already exists");
-  chatFalse();
+  document.getElementById("nameError").innerText = "Chattinimi on jo käytössä";
+  form.style.visibility = "hidden";
+  document.getElementById("join").disabled = false;
 });
 
 /*
@@ -58,12 +64,7 @@ socket.on("remove from usernames", (name) => {
 
 function chatTrue() {
   document.getElementById("join").disabled = true;
-  document.getElementById("send").disabled = false;
+  userJoin.style.display = "none";
+  form.style.visibility = "visible";
   document.getElementById("nameError").innerText = "";
-};
-const chatFalse = () => {
-  document.getElementById("join").disabled = false;
-  document.getElementById("send").disabled = true;
-  document.getElementById("nameError").innerText =
-    "Chattinimi on jo käytössä";
-};
+}

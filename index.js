@@ -22,6 +22,7 @@ io.on("connection", (socket) => {
       users.push({ username: username, id: socket.id });
       console.log("new users connected: ", users);
       io.emit("new user", username);
+      socket.emit("open chat", username);
     }
   });
 
