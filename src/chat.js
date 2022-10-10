@@ -45,7 +45,7 @@ socket.on("new user", (msg) => {
 });
 
 socket.on("open chat", (msg) => {
-  chatTrue();
+  openChat();
 });
 
 socket.on("name exists", (msg) => {
@@ -55,16 +55,11 @@ socket.on("name exists", (msg) => {
   document.getElementById("join").disabled = false;
 });
 
-/*
-socket.on("remove from usernames", (name) => {
-  userNames = userNames.filter((item) => item !== `${name}`);
-  console.log("user list: ", userNames);
-});
-*/
-
-function chatTrue() {
+const openChat = () => {
   document.getElementById("join").disabled = true;
   userJoin.style.display = "none";
   form.style.visibility = "visible";
   document.getElementById("nameError").innerText = "";
-}
+  document.getElementById("allMessages").style.height = "25rem";
+  document.getElementById("allMessages").style.paddingTop = "0";
+};
