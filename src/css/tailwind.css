@@ -146,30 +146,50 @@
     font-style: bold;
   }
 
+  #full-name {
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+
+  }
+
+  #email-address {
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+
+  }
+
+  #subject {
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+
+  }
+
+  #message {
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+
+  }
+
   #full-name:hover {
-    border-bottom: 1px solid #bf55ff;
+    border-bottom: 1px solid #364044;
     transition: border 0.5s linear;
   }
   #full-name:focus {
-    border-bottom: 1px solid #160f2e;
+    border-bottom: 1px solid #364044;
     transition: border 1s linear;
   }
 
   #email-address:hover {
-    border-bottom: 1px solid #bf55ff;
+    border-bottom: 1px solid #364044;
     transition: border 0.5s linear;
   }
   #email-address:focus {
-    border-bottom: 1px solid #160f2e;
+    border-bottom: 1px solid #364044;
     transition: border 1s linear;
   }
 
   #subject:hover {
-    border-bottom: 1px solid #bf55ff;
+    border-bottom: 1px solid #364044;
     transition: border 0.5s linear;
   }
   #subject:focus {
-    border-bottom: 1px solid #160f2e;
+    border-bottom: 1px solid #364044;
     transition: border 1s linear;
   }
 
@@ -179,11 +199,11 @@
   }
 
   #message:hover {
-    border-bottom: 1px solid #A3B3BC;
+    border-bottom: 1px solid #364044;
     transition: border 1s linear;
   }
   #message:focus {
-    border-bottom: 1px solid #A3B3BC;
+    border-bottom: 1px solid #364044;
     transition: border 1s linear;
     outline: none;
   }
@@ -196,8 +216,8 @@
   margin-bottom:20px;
   align-items: center;
   appearance: none;
-  background-color: rgb(232, 237, 240);
-  border-radius: 24px;
+  background-color: #F6F9FE;
+  border-radius: 15px;
   border-style: none;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
   box-sizing: border-box;
@@ -228,8 +248,9 @@
 }
 
 .button-17:hover {
-  background: #F6F9FE;
-  color: #364044;
+  
+  background: #A3B3BC;
+  color: #FFFFFF;
 }
 
 .button-17:active {
@@ -300,3 +321,10 @@
   font-weight: bold;
   color: #1F2122;
 }
+
+#contactForm {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+  border: 3px;
+  border-radius: 5px;
+}
+
