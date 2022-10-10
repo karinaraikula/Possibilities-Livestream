@@ -177,8 +177,8 @@
     </style>
   </head>
 
-  <body class="bg-primary-light">
-    <header>
+  <body class="bg-primary-dark">
+    <header class="bg-primary-dark">
       <section class="top-nav">
         <div>
           <img src="./images/metropolia-logo.png" alt="" class="h-14">
@@ -189,62 +189,44 @@
         </label>
         <ul class="menu text-lg">
           <li> <a href="index.html">Etusivu</a> </li>
-          <li> <a href="">Lisätietoa</a> </li>
-          <li> <a href="form.html">Ota yhteyttä</a> </li>
           <li> <a href="videoarkisto.html">Menneet streamit</a> </li>
+          <li> <a href="form.html">Ota yhteyttä</a> </li>
+
         </ul>
       </section>
-      <div class=" w-full h-80">
-        <img
-          class="object-cover w-full h-full"
-          src="/images/banner.jpg"
-          alt="header picture of people walking in a futuristic corridor"
-        />
-
-        <h2 class="absolute text-4xl bg-primary-color-light top-28 pl-5">
-          Mahdollisuuksien maisemia
-        </h2>
-       </div>
-        
-      <div class="bg-secondary-dark md:flex text-secondary-light" >
-        <div class="p-5 text-lg md:w-6/12">
-          <p class="text-left">Luovuus sinun työssäsi?</p>
-          <p class="text-left">Mitä luovuus työelämässä mahdollistaa?</p>
-        </div>
-        <div
-          class="bg-secondary-dark p-5 text-right text-sm md:text-lg md:w-6/12"
-        >
-          <p>#MahollisuuksienMaisemia</p>
-          <p>kulttuurihyvinvointi@metropolia.fi</p>
-        </div>
-      </div>
-    </header>
-
-    <main class="">
       
-        <section class="bg-primary-dark text-secondary-light w-full m-auto mt-10 p-5 flex-col justify-evenly" >
-            <div class=" ">
-    
-            
-            
-            <h1 class="text-center text-4xl mb-5 ">Videoarkisto</h1>
-   
-            <h1 class="text-center text-lg my-5 ">Streamit Youtubessa</h1>
-    
-        <div class="">
-          <div id="default-carousel" class="relative max-w-screen-lg " data-carousel="static">
+          <h1 class="text-center text-4xl mb-5 p-5 text-white">Videoarkisto</h1>
+          <div class="">
+          <div id="default-carousel" class="relative w-9/12 m-auto" data-carousel="static">
             <!-- Carousel wrapper -->
-            <div class="relative aspect-w-16 aspect-h-9 overflow-hidden border border-red-600 rounded-lg md:min-h-96">
+            <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
                 <!-- Item 1 -->
-                <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20" data-carousel-item="">
-                    <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-                    <img src="./images/inspiskuva.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                </div>
+                <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="">
+                    <div class="bg-secondary-light absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                      <div class="aspect-w-16 aspect-h-9">
+                        <video
+                          id="vid2.0"
+                          class="video-js vjs-default-skin vjs-big-play-centered"
+                          controls
+                          width="600" height="400"
+                          data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=t4dQHs5em5M"}] }'
+                        >
+                        </video>
+                      </div>
+                    </div>
+              </div>
                 <!-- Item 2 -->
                 <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="">
                     <div class="bg-secondary-light absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                         <div class="aspect-w-16 aspect-h-9">
-                            <iframe src="https://www.youtube.com/embed/r9jwGansp1E" width="400" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <video
+              id="vid2.1"
+              class="video-js vjs-default-skin vjs-big-play-centered"
+              controls
+              width="600" height="400"
+              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=t4dQHs5em5M"}] }'
+            >
+            </video>
                         </div>
                     </div>
               </div>
@@ -253,10 +235,16 @@
                 <div class="bg-secondary-light absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                   <div class="flex flex-col">
                       <div class="aspect-w-16 aspect-h-9">
-                          <iframe src="https://www.youtube.com/embed/r9jwGansp1E" width="400" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <video
+              id="vid2.2"
+              class="video-js vjs-default-skin vjs-big-play-centered"
+              controls
+              width="600" height="400"
+              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=t4dQHs5em5M"}] }'
+            >
+            </video>
                       </div>
-                  </div>
-                  
+                    </div>
               </div>
             </div>
                 <!-- Item 3 
@@ -285,80 +273,89 @@
             </button>
           </div>
         </div>
-    
-        <h1 class="text-center text-lg my-5 ">Streamit Vimeossa</h1>
-    
-        <div class="">
-          <div id="default-carousel" class="relative max-w-screen-lg " data-carousel="static">
-            <!-- Carousel wrapper -->
-            <div class="relative aspect-w-16 aspect-h-9 overflow-hidden border border-blue-400 rounded-lg md:min-h-96">
-                <!-- Item 1 -->
-                <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20" data-carousel-item="">
-                    <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-                    <img src="./images/inspiskuva.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                </div>
-                <!-- Item 2 -->
-                <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="">
-                    <div class="bg-secondary-light absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                      <div class="aspect-w-16 aspect-h-9">
-                        <iframe src="https://player.vimeo.com/video/146022717?color=0c88dd&title=0&byline=0&portrait=0&badge=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                      </div>
-                    </div>
-              </div>
-              <!-- Item 3 -->
-              <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="">
-                <div class="bg-secondary-light absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                  <div class="flex flex-col">
-                    <div class="aspect-w-16 aspect-h-9">
-                      <iframe src="https://player.vimeo.com/video/146022717?color=0c88dd&title=0&byline=0&portrait=0&badge=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                  
-              </div>
-            </div>
-                <!-- Item 3 
-                <div class="duration-700 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
-                    <video class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" src="./images/video.mp4"></video>
-                </div> -->
-            </div>
-            <!-- Slider indicators -->
-            <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                <button type="button" class="w-3 h-3 rounded-full bg-white dark:bg-gray-800" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-            </div>
-            <!-- Slider controls -->
-            <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev="">
-                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                    <span class="sr-only">Previous</span>
-                </span>
-            </button>
-            <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next="">
-                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    <span class="sr-only">Next</span>
-                </span>
-            </button>
+   
+    </header>
+      <div class="w-2/3 justify-center m-auto mt-9">
+          <h3 class="text-xl text-white m-auto justify-center my-3">Täältä löydät kaikki meidän menneet striimit</h3>
+          <p class="text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum adipisci aliquid quis? Tenetur a, reprehenderit velit quas voluptatibus eum nostrum. Dolorum, tempora inventore! Esse dolor, minus iure excepturi et autem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam minus aspernatur corporis, nisi laudantium doloremque rerum, esse reprehenderit, dicta quasi sequi dolore fugit cum ipsam nulla quas amet illo?</p>
+          
+          <p class="text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum adipisci aliquid quis? Tenetur a, reprehenderit velit quas voluptatibus eum nostrum. Dolorum, tempora inventore! Esse dolor, minus iure excepturi et autem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam minus aspernatur corporis, nisi laudantium doloremque rerum, esse reprehenderit, dicta quasi sequi dolore fugit cum ipsam nulla quas amet illo?</p>
+      </div>
+    <main class="w-full h-fit m-auto">
+     <div class="flex flex-wrap m-auto justify-center my-10">
+          <div class="m-6">
+            <h3>Video</h3>
+            <video
+              id="vid1"
+              class="video-js vjs-default-skin vjs-big-play-centered"
+              controls
+              width="360" height="200"
+              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=ixRKeQMa7Nc"}] }'
+            >
+            </video>
           </div>
-        </div>
-            
+           <div class="m-6">
+              <h3>Video</h3>
+            <video
+              id="vid2"
+              class="video-js vjs-default-skin vjs-big-play-centered"
+              controls
+              width="360" height="200"
+              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=t4dQHs5em5M"}] }'
+            >
+            </video>
           </div>
-            
-        </section>
+          <div class="m-6">
+              <h3>Video</h3>
 
+            <video
+              id="vid3"
+              class="video-js vjs-default-skin vjs-big-play-centered"
+              controls
+              width="360" height="200"
+              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=a7qyW1G350g"}] }'
+            >
+            </video>
+          </div> 
+          <div class="m-6">
+              <h3>Video</h3>
 
+            <video
+              id="vid4"
+              class="video-js vjs-default-skin vjs-big-play-centered"
+              controls
+              width="360" height="200"
+              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=_0YUo-VTV6k"}] }'
+            >
+            </video>
+          </div> 
+          <div class="m-6">
+              <h3>Video</h3>
 
-      <section  class="bg-secondary-light w-full m-auto mt-10 p-5 md:flex justify-evenly text-lg text-primary-dark">
-        <div class="md:w-1/2 mx-3 pr-4 w-full ">
-          <h3 class="text-4xl my-4">Mikä tapahtuma</h3>
-          <p class="w-full">Miten luovuuden mahdollisuuksia huomioiva näkökulma työelämässä eri aloilla ja ammateissa otetaan käyttöön? Miten luovuuden huomiointi edistää kestävää, hyvää työelämää ja tulevaisuutta? Moniäänisessä tapahtumassa kuullaan sekä huippututkijoiden puheenvuoroja että käydään eri alojen ammattilaisten ja opiskelijoiden yhteistä keskustelua luovuuden mahdollisuuksista työelämässä.</p>
-        </div>
-        <div class="md:w-1/2 mx-3 pr-4 w-full">  
-          <h3 class="text-4xl my-4">Kenelle?</h3>
-          <p class="w-full">Tapahtuma on tarkoitettu eri alojen ammateissa toimiville ammattilaisille, asiantuntijoille, yrittäjille ja opiskelijoille. Luovuus tuo mahdollisuuksia kaikilla aloilla!</p>
-        </div>
-      </section>
+            <video
+              id="vid5"
+              class="video-js vjs-default-skin vjs-big-play-centered"
+              controls
+              width="360" height="200"
+              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=Lcu8SdcsYnY"}] }'
+            >
+            </video>
+          </div> 
+          <div class="m-6">
+              <h3>Video</h3>
+
+            <video
+              id="vid6"
+              class="video-js vjs-default-skin vjs-big-play-centered"
+              controls
+              width="360" height="200"
+              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=_6iGyt4IcI0"}] }'
+            >
+            </video>
+          </div> 
+       
+    </div>
+    
     </main>
 
     <footer
@@ -379,29 +376,13 @@
     integrity="sha512-LIxZvLf3cF72wbVxt+3ajwseTY82yjgyVvAN2nQ2B037JtZPaVZRkaukU/JmG1EkbFmD9a7Wx5VAcosed0/u6g==" 
     crossorigin="anonymous">
     </script>
-        <script src="/socket.io/socket.io.js"></script>
-    <script src="counter.js"></script>
-    <script src="hamNav.js"></script>
-    <script src="chat.js"></script>
-    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-
-
-
     <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
-    <script>
-      let myPlayer = document.querySelector(".video-js");
+    <script src="hamNav.js"></script>
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+    <script src="./Youtube.js"></script>
+    <script src="./Youtube.min.js"></script>
 
-      console.log(myPlayer);
-
-      videojs(myPlayer, {
-        controls: true,
-        autoplay: false,
-        muted: true,
-        fluid: true,
-        poster: "images/poster.jpg",
-        
-      });
-    </script>
+   
 
   </body>
   

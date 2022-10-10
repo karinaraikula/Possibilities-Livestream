@@ -417,6 +417,7 @@ h2 {
 h3 {
   font-weight: bold;
   font-size: 1.1em;
+  color: white;
 }
 
 p {
@@ -644,6 +645,7 @@ html,
 .top-20 {
   top: 5rem;
 }
+
 .top-1\/2 {
   top: 50%;
 }
@@ -688,6 +690,10 @@ html,
   margin: 1.25rem;
 }
 
+.m-6 {
+  margin: 1.5rem;
+}
+
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -706,6 +712,16 @@ html,
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .ml-1 {
@@ -876,6 +892,14 @@ html,
   width: 1.25rem;
 }
 
+.w-9\/12 {
+  width: 75%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -932,6 +956,10 @@ html,
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .place-content-evenly {
