@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+    <style>
+      .player {
+        height: 200px;
+        width: 400px;
+      }
+
+      .vjs-theme-city {
+        --vjs-theme-city--primary: #e5c7b4ff;
+        --vjs-theme-city--secondary: #fff;
+      }
+
+      .vjs-theme-city .vjs-control-bar {
+        height: 70px;
+        padding-top: 20px;
+        background: none;
+        background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+      }
+
+      .vjs-theme-city .vjs-button > .vjs-icon-placeholder::before {
+        line-height: 50px;
+      }
+
+      .vjs-theme-city .vjs-play-progress::before {
+        display: none;
+      }
+
+      .vjs-theme-city .vjs-progress-control {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 20px;
+      }
+
+      .vjs-theme-city .vjs-progress-control .vjs-progress-holder {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+      }
+
+      .vjs-theme-city .vjs-play-progress {
+        background-color: #e5c7b4ff;
+      }
+
+      .vjs-theme-city .vjs-remaining-time {
+        order: 1;
+        line-height: 50px;
+        flex: 3;
+        text-align: left;
+        font-size: medium;
+      }
+
+      .vjs-theme-city .vjs-play-control {
+        order: 2;
+        flex: 8;
+        font-size: 2em;
+      }
+
+      .vjs-theme-city .vjs-volume-panel,
+      .vjs-theme-city .vjs-picture-in-picture-control,
+      .vjs-theme-city .vjs-fullscreen-control {
+        order: 3;
+        flex: 1;
+        font-size: 1.2em;
+      }
+
+      /* Volume stuff */
+      .vjs-theme-city
+        .vjs-volume-panel:hover
+        .vjs-volume-control.vjs-volume-horizontal {
+        height: 100%;
+      }
+
+      .vjs-theme-city .vjs-mute-control {
+        display: none;
+      }
+
+      .vjs-theme-city .vjs-volume-panel {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        padding-top: 1em;
+      }
+
+      .vjs-theme-city .vjs-volume-panel,
+      .vjs-theme-city .vjs-volume-panel:hover,
+      .vjs-theme-city .vjs-volume-panel.vjs-volume-panel-horizontal:hover,
+      .vjs-theme-city
+        .vjs-volume-panel:focus
+        .vjs-volume-control.vjs-volume-horizontal,
+      .vjs-theme-city
+        .vjs-volume-panel:hover
+        .vjs-volume-control.vjs-volume-horizontal,
+      .vjs-theme-city
+        .vjs-volume-panel:active
+        .vjs-volume-control.vjs-volume-horizontal,
+      .vjs-theme-city .vjs-volume-panel.vjs-volume-panel-horizontal:hover,
+      .vjs-theme-city .vjs-volume-bar.vjs-slider-horizontal {
+        width: 3em;
+      }
+
+      .vjs-theme-city .vjs-volume-level::before {
+        font-size: 1em;
+      }
+
+      .vjs-theme-city .vjs-volume-panel .vjs-volume-control {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+      }
+
+      .vjs-theme-city .vjs-volume-bar {
+        background-color: transparent;
+        margin: 0;
+      }
+
+      .vjs-theme-city .vjs-slider-horizontal .vjs-volume-level {
+        height: 100%;
+      }
+
+      .vjs-theme-city .vjs-volume-bar.vjs-slider-horizontal {
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 100%;
+      }
+
+      .vjs-theme-city .vjs-volume-bar::before {
+        content: "";
+        z-index: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0px;
+        left: 0;
+
+        border-style: solid;
+        border-width: 0 0 1.75em 3em;
+        border-color: transparent transparent rgba(255, 255, 255, 0.25)
+          transparent;
+      }
+
+      .vjs-theme-city .vjs-volume-level {
+        overflow: hidden;
+        background-color: transparent;
+      }
+
+      .vjs-theme-city .vjs-volume-level::before {
+        content: "";
+        z-index: 1;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        border-style: solid;
+        border-width: 0 0 1.75em 3em;
+        border-color: transparent transparent var(--vjs-theme-city--secondary)
+          transparent;
+      }
+    </style>
+  </head>
+
+  <body class="bg-primary-light">
+    <header>
+      <section class="top-nav">
+        <div>
+          <img src="/images/metropolia-logo.png" alt="" class="h-14">
+        </div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+        <ul class="menu text-lg">
+          <li> <a href="index.html">Etusivu</a> </li>
+          <li> <a href="">Lisätietoa</a> </li>
+          <li> <a href="form.html">Ota yhteyttä</a> </li>
+        </ul>
+      </section>
+      <div class=" w-full h-80">
+        <img
+          class="object-cover w-full h-full"
+          src="/images/future.jpg"
+          alt="header picture of people walking in a futuristic corridor"
+        />
+
+        <h2 class="absolute text-4xl text-secondary-light top-28 pl-5">
+          Mahdollisuuksien maisemia
+        </h2>
+       
+        
+      <div class="bg-secondary-dark md:flex text-secondary-light" >
+        <div class="p-5 text-lg md:w-6/12">
+          <p class="text-left">Luovuus sinun työssäsi?</p>
+          <p class="text-left">Mitä luovuus työelämässä mahdollistaa?</p>
+        </div>
+        <div
+          class="bg-secondary-dark p-5 text-right text-sm md:text-lg md:w-6/12"
+        >
+          <p>#MahollisuuksienMaisemia</p>
+          <p>kulttuurihyvinvointi@metropolia.fi</p>
+        </div>
+      </div>
+    </header>
+    <main class="md:mt-32 mt-48">
+      <div id="counter-div">
+        <p class="text-center lg:text-4xl sm:text-2xl pb-6 text-primary-dark" id="demo">. . .</p>
+      </div>
+
+      <!---------VIDEOSECTION------------>
+
+      <section class="bg-primary-dark text-secondary-light w-full m-auto mt-10 p-5 flex-col justify-evenly" >
+        <div class=" ">
+
+        
+        
+        <h1 class="text-center text-4xl mb-5 ">Videoarkisto</h1>
+<!-----
+        <div class="flex flex-col items-center ">
+            <div class="flex flex-col ">
+                <div class="bg-secondary-light m-5">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="bg-secondary-dark m-5">
+                    <p class="w-full text-left px-5 pt-5 text-lg">Mahdollisuuksien maishs 2021</p>
+                    <p class="w-full text-left p-5">Blabla menneet streamit und shit like that blalalakaan bsjdjdfkkb
+                    vbfjdvbdfjvbd fgbdfgbdgbsld</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row ">
+                <div class="bg-secondary-light m-5">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="bg-secondary-dark m-5">
+                    <p class="w-full text-left px-5 pt-5 text-lg">Mahdollisuuksien maishs 2021</p>
+                    <p class="w-full text-left p-5">Blabla menneet streamit und shit like that blalalakaan bsjdjdfkkb
+                    vbfjdvbdfjvbdfgbd fgbdgbsld</p>
+                </div>
+            </div>
+        </div> ------>
+        <h1 class="text-center text-lg my-5 ">Streamit Youtubessa</h1>
+
+    <div class="">
+      <div id="default-carousel" class="relative max-w-screen-lg " data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="relative aspect-w-16 aspect-h-9 overflow-hidden border border-red-600 rounded-lg md:min-h-96">
+            <!-- Item 1 -->
+            <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20" data-carousel-item="">
+                <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
+                <img src="./images/inspiskuva.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="">
+                <div class="bg-secondary-light absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" width="400" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="">
+            <div class="bg-secondary-light absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+              <div class="flex flex-col">
+                  <div class="aspect-w-16 aspect-h-9">
+                      <iframe src="https://www.youtube.com/embed/r9jwGansp1E" width="400" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+              </div>
+              
+          </div>
+        </div>
+            <!-- Item 3 
+            <div class="duration-700 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
+                <video class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" src="./images/video.mp4"></video>
+            </div> -->
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <button type="button" class="w-3 h-3 rounded-full bg-white dark:bg-gray-800" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev="">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next="">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+      </div>
+    </div>
+
+    <h1 class="text-center text-lg my-5 ">Streamit Vimeossa</h1>
+
+    <div class="">
+      <div id="default-carousel" class="relative max-w-screen-lg " data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="relative aspect-w-16 aspect-h-9 overflow-hidden border border-blue-400 rounded-lg md:min-h-96">
+            <!-- Item 1 -->
+            <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20" data-carousel-item="">
+                <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
+                <img src="./images/inspiskuva.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="">
+                <div class="bg-secondary-light absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                  <div class="aspect-w-16 aspect-h-9">
+                    <iframe src="https://player.vimeo.com/video/146022717?color=0c88dd&title=0&byline=0&portrait=0&badge=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="">
+            <div class="bg-secondary-light absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+              <div class="flex flex-col">
+                <div class="aspect-w-16 aspect-h-9">
+                  <iframe src="https://player.vimeo.com/video/146022717?color=0c88dd&title=0&byline=0&portrait=0&badge=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+              
+          </div>
+        </div>
+            <!-- Item 3 
+            <div class="duration-700 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
+                <video class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" src="./images/video.mp4"></video>
+            </div> -->
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <button type="button" class="w-3 h-3 rounded-full bg-white dark:bg-gray-800" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev="">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next="">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+      </div>
+    </div>
+        
+      </div>
+        
+    </section>
+
+<!-----testttiii----->
+
+
+
+
+<!-----testttiii2----->
+
+  
+
+<!---------FOOTER---------->
+
+      <section  class="bg-secondary-light w-full m-auto mt-10 p-5 md:flex justify-evenly text-lg text-primary-dark">
+        <div class="md:w-1/2 mx-3 pr-4 w-full ">
+          <h3 class="text-4xl my-4">Mikä tapahtuma</h2>
+          <p class="w-full">Miten luovuuden mahdollisuuksia huomioiva näkökulma työelämässä eri aloilla ja ammateissa otetaan käyttöön? Miten luovuuden huomiointi edistää kestävää, hyvää työelämää ja tulevaisuutta? Moniäänisessä tapahtumassa kuullaan sekä huippututkijoiden puheenvuoroja että käydään eri alojen ammattilaisten ja opiskelijoiden yhteistä keskustelua luovuuden mahdollisuuksista työelämässä.</p>
+        </div>
+        <div class="md:w-1/2 mx-3 pr-4 w-full">  
+          <h3 class="text-4xl my-4">Kenelle?</h2>
+          <p class="w-full">Tapahtuma on tarkoitettu eri alojen ammateissa toimiville ammattilaisille, asiantuntijoille, yrittäjille ja opiskelijoille. Luovuus tuo mahdollisuuksia kaikilla aloilla!</p>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="
+        bg-primary-light
+        text-lg
+        flex
+        justify-center
+        content-center
+        p-5
+      "
+    >
+      <img src="/images/metropolia-logo.png" alt="" class="h-14">
+    </footer>
+    <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.1.2/qs.min.js" 
+    integrity="sha512-LIxZvLf3cF72wbVxt+3ajwseTY82yjgyVvAN2nQ2B037JtZPaVZRkaukU/JmG1EkbFmD9a7Wx5VAcosed0/u6g==" 
+    crossorigin="anonymous">
+    </script>
+        <script src="/socket.io/socket.io.js"></script>
+    <script src="counter.js"></script>
+    <script src="hamNav.js"></script>
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+    
+
+
+    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+    <script>
+      let myPlayer = document.querySelector(".video-js");
+
+      console.log(myPlayer);
+
+      videojs(myPlayer, {
+        controls: true,
+        autoplay: false,
+        muted: true,
+        fluid: true,
+        poster: "picture.png",
+        
+      });
+    </script>
+  </body>
+</html>
