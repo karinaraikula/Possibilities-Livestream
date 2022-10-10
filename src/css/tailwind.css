@@ -277,3 +277,25 @@
     outline: none;
   }
 }
+
+
+#linkki {
+  color: #A3B3BC;
+  text-decoration: underline;
+  font-family: 'Libre Franklin';
+}
+
+#linkki:visited{
+  color: #551A8B;
+}
+
+#linkki:hover {
+  color: #364044;
+}
+
+#ohjelma {
+  font-family: 'Libre Franklin';
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1F2122;
+}
