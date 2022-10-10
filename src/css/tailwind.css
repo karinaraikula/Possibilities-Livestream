@@ -3,7 +3,6 @@
 @layer base {
   h2 {
     vertical-align: center;
-    text-align: center;
   }
   h3 {
     font-weight: bold;
@@ -143,7 +142,6 @@
     }
   }
   #demo {
-    font-family: "Josefin Sans", sans-serif;
     font-style: bold;
   }
 
@@ -174,87 +172,93 @@
     transition: border 1s linear;
   }
 
+  #message {
+    border: 2px solid #FFFFFF;
+    border-radius: 3px;
+  }
+
   #message:hover {
-    border-bottom: 1px solid #bf55ff;
+    border-bottom: 1px solid #A3B3BC;
     transition: border 1s linear;
   }
   #message:focus {
-    border-bottom: 1px solid #bf55ff;
+    border-bottom: 1px solid #A3B3BC;
     transition: border 1s linear;
     outline: none;
   }
 
   /* CSS */
-  .button-20 {
-    appearance: button;
-    background-color: #4d4ae8;
-    background-image: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.15),
-      rgba(255, 255, 255, 0)
-    );
-    border: 1px solid #4d4ae8;
-    border-radius: 1rem;
-    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,
-      rgba(46, 54, 80, 0.075) 0 1px 1px;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: Inter, sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.5;
-    margin: 0;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    text-transform: none;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-  }
 
-  .button-20:focus:not(:focus-visible),
-  .button-20:focus {
-    outline: 0;
-  }
+/* CSS */
+.button-17 {
+  margin-top: 1rem;
+  align-items: center;
+  appearance: none;
+  background-color: rgb(232, 237, 240);
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #1F2122;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Libre Franklin";
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
 
-  .button-20:hover {
-    background-color: #3733e5;
-    border-color: #3733e5;
-  }
+.button-17:hover {
+  background: #F6F9FE;
+  color: #364044;
+}
 
-  .button-20:focus {
-    background-color: #413fc5;
-    border-color: #3e3bba;
-    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,
-      rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 0.2rem;
-  }
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
 
-  .button-20:active {
-    background-color: #3e3bba;
-    background-image: none;
-    border-color: #3a38ae;
-    box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
-  }
+.button-17:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
 
-  .button-20:active:focus {
-    box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset,
-      rgba(104, 101, 235, 0.5) 0 0 0 0.2rem;
-  }
+.button-17:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
 
-  .button-20:disabled {
-    background-image: none;
-    box-shadow: none;
-    opacity: 0.65;
-    pointer-events: none;
-  }
+.button-17:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
 
+.button-17:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
   .display-none {
     display: none;
   }
