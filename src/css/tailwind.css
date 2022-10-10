@@ -46,21 +46,6 @@
     padding: 0;
   }
 
-  li:hover {
-    opacity: 1;
-  }
-
-  .menu-fade-up::before {
-    width: 100%;
-    bottom: 5px;
-    opacity: 0;
-  }
-
-  .menu-fade-up:hover::before {
-    bottom: 10px;
-    opacity: 1;
-  }
-
   .menu > li {
     margin: 0 1rem;
     overflow: hidden;
@@ -114,6 +99,14 @@
   #menu-toggle:checked + .menu-button-container .menu-button::after {
     margin-top: 0px;
     transform: rotate(-405deg);
+  }
+
+  li a:hover {
+    border-bottom: 2px solid #ccc;
+  }
+
+  .active {
+    border-bottom: 2px solid #ccc;
   }
 
   @media (max-width: 900px) {
