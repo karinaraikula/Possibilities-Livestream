@@ -190,6 +190,7 @@
         </label>
         <ul class="menu text-lg font-header">
           <li> <a href="index.html">Etusivu</a> </li>
+          <li> <a href="aikataulu.html">Aikataulu</a> </li>
           <li> <a href="videoarkisto.html">Menneet streamit</a> </li>
           <li> <a href="form.html">Ota yhteyttä</a> </li>
         </ul>
@@ -232,9 +233,11 @@
           lg:flex
           lg:w-full
           lg:px-10 
+          bg-primary-middle
+          md:pb-6
         "
       >    
-        <div id="videoDiv" class="h-full lg:w-full bg-primary-dark"  poster="images/poster.jpg">
+        <div id="videoDiv" class="h-full lg:w-full bg-primary-dark content-center m-auto"  poster="images/poster.jpg">
         <video id="my-video" class="video-js vjs-theme-own vjs-big-play-centered">
             <source src="images/video.mp4" type="video/mp4" />
           </video>
@@ -261,16 +264,14 @@
           </p>
         </video>
          ------>
-
         </div>
 
-        <div id="liveChat" class="m-auto border-zinc-900 border-4 rounded-sm p-4 lg:ml-5 md:w-8/12 xs:w-full bg-zinc-800 h-[32rem]">
+        <div id="liveChat" class="m-auto border-zinc-900 border-2 rounded-sm p-4 lg:ml-5 md:w-8/12 xs:w-full mt-0 md:mt-6 bg-zinc-800 h-[32rem]">
           <div class="flex flex-row justify-center">
             <h1 class="text-primary-color text-2xl text-white font-header">Live-Chat</h1>
           </div>
 
           <form id="userForm">
-
             <div class="form pt-4 flex flex-col">
               <input
                 class="pl-1 border-b-2 bg-transparent text-white "
@@ -290,7 +291,7 @@
           </form> 
 
 
-                <div class="chat-form-container m-w-sm">
+                <div class="chat-form-container m-w-sm ">
                   <ul id="allMessages" class="list-none h-[20rem] overflow-scroll pb-6"></ul>
 
                   <div class="chat-messages"></div>
