@@ -417,7 +417,11 @@ h2 {
 h3 {
   font-weight: bold;
   font-size: 1.1em;
-  color: white;
+  color: #1F2122;
+}
+
+h4 {
+  color: rgb(232, 237, 240);
 }
 
 p {
@@ -741,6 +745,14 @@ html,
   margin-left: 1.25rem;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -923,6 +935,10 @@ html,
 
 .list-none {
   list-style-type: none;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .flex-row {
@@ -1136,6 +1152,11 @@ html,
   padding-right: 2.5rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1181,6 +1202,10 @@ html,
   padding-bottom: 1.5rem;
 }
 
+.pr-5 {
+  padding-right: 1.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1206,7 +1231,7 @@ html,
 }
 
 .font-body {
-  font-family: "Libre Franklin";
+  font-family: "Lato";
 }
 
 .text-lg {
@@ -1248,10 +1273,6 @@ html,
   font-weight: 600;
 }
 
-.italic {
-  font-style: italic;
-}
-
 .text-secondary-light {
   --tw-text-opacity: 1;
   color: rgb(232 237 240 / var(--tw-text-opacity));
@@ -1290,6 +1311,11 @@ html,
 .text-primary-light {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .outline-none {
@@ -1642,6 +1668,11 @@ li a:hover {
   border-radius: 5px;
 }
 
+#boxShadow {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+      rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+}
+
 .hover\:bg-blue-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
@@ -1895,3 +1926,4 @@ li a:hover {
     line-height: 2.5rem;
   }
 }
+

@@ -6,7 +6,7 @@ module.exports = {
 
     fontFamily: {
       "header": ['"Aboreto"'],
-      "body": ['"Libre Franklin"']
+      "body": ['"Lato"'],
     },
   
     screens: {
