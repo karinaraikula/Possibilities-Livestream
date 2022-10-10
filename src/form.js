@@ -28,9 +28,11 @@ function submitForm(e) {
   document.getElementById("alert").style.display = "block";
 
   //remove alert
+  
   setTimeout(() => {
     document.getElementById("alert").style.display = "none";
   }, 5000);
+  
 
   // reset form
   document.getElementById("contact-form").reset();
