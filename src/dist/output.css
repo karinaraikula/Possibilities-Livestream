@@ -694,6 +694,10 @@ html,
   margin: 1.5rem;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -914,6 +918,14 @@ html,
 
 .w-10\/12 {
   width: 83.333333%;
+}
+
+.w-3\/5 {
+  width: 60%;
+}
+
+.w-4\/5 {
+  width: 80%;
 }
 
 .max-w-sm {
