@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/output.css" rel="stylesheet" />
     <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Libre+Franklin&display=swap" rel="stylesheet">
+   
+   <style>
       .player {
         height: 200px;
         width: 400px;
@@ -120,7 +120,7 @@
       }
 
       .vjs-theme-own .vjs-volume-panel .vjs-volume-control {
-        opaown: 1;
+        opacity: 1;
         width: 100%;
         height: 100%;
       }
@@ -181,13 +181,15 @@
     <header>
       <section class="top-nav">
         <div>
+          <a href="index.html">
           <img src="/images/metropolia-logo.png" alt="" class="h-14">
+          </a>
         </div>
         <input id="menu-toggle" type="checkbox" />
         <label class='menu-button-container' for="menu-toggle">
           <div class='menu-button'></div>
         </label>
-        <ul class="menu text-lg">
+        <ul class="menu text-lg font-header">
           <li> <a href="index.html">Etusivu</a> </li>
           <li> <a href="">Lisätietoa</a> </li>
           <li> <a href="form.html">Ota yhteyttä</a> </li>
@@ -200,28 +202,28 @@
           alt="header picture of people walking in a futuristic corridor"
         />
 
-        <h2 class="absolute text-4xl bg-primary-color-light top-28 pl-5">
+        <h2 class="absolute text-3xl top-20 font-header bg-gradient-to-b from-kansi p-6 w-full">
           Mahdollisuuksien maisemia
         </h2>
        </div>
         
-      <div class="bg-secondary-dark md:flex text-secondary-light" >
+      <div class="bg-primary-dark md:flex text-secondary-light" >
         <div class="p-5 text-lg md:w-6/12">
-          <p class="text-left">Luovuus sinun työssäsi?</p>
-          <p class="text-left">Mitä luovuus työelämässä mahdollistaa?</p>
+          <p class="text-left font-body">Luovuus sinun työssäsi?</p>
+          <p class="text-left font-body">Mitä luovuus työelämässä mahdollistaa?</p>
         </div>
         <div
-          class="bg-secondary-dark p-5 text-right text-sm md:text-lg md:w-6/12"
+          class="bg-primary-dark p-5 text-right text-sm md:text-lg md:w-6/12"
         >
-          <p>#MahollisuuksienMaisemia</p>
-          <p>kulttuurihyvinvointi@metropolia.fi</p>
+          <p class="font-body">#MahollisuuksienMaisemia</p>
+          <p class="font-body">kulttuurihyvinvointi@metropolia.fi</p>
         </div>
       </div>
     </header>
 
     <main class="">
       <div id="counter-div">
-        <p class="text-center my-6 lg:text-4xl sm:text-2xl text-primary-dark" id="demo">. . .</p>
+        <p class="text-center my-6 lg:text-4xl sm:text-2xl font-header text-primary-dark" id="demo">. . .</p>
       </div>
       <section
         class="
@@ -265,7 +267,7 @@
 
         <div id="liveChat" class="m-auto border-zinc-900 border-4 rounded-sm p-4 lg:ml-5 md:w-8/12 xs:w-full bg-zinc-800 h-[32rem]">
           <div class="flex flex-row justify-center">
-            <h1 class="text-primary-color text-2xl text-white">Live-Chat</h1>
+            <h1 class="text-primary-color text-2xl text-white font-header">Live-Chat</h1>
           </div>
 
           <form id="userForm">
@@ -281,8 +283,8 @@
               />
             </div>  
                 <p class="text-red-500 text-xs italic" id="nameError"></p>
-            <button id="join" type="submit" class="button-20">
-              Liity keskuteluun
+            <button id="join" type="submit" class="button-17">
+              Liity keskusteluun
             </button>
            
 
@@ -302,11 +304,12 @@
                     align-bottom 
                     mt-auto
                     items-center
-                    w-full
+                    w-full      
                     "
                   >
                     <input
                       class="
+                     
                       flex
                       align-bottom
                       mt-auto
@@ -326,17 +329,20 @@
                     id="send"
                       class="
                         btn
-                        mx-2
+                        mr-2
+                        ml-5
                         flex 
                         justify-center
-                        text-purple-200
+                        text-primary-light
+                        bg-primary-light
                         rounded-full
+                        p-2
                         cursor-pointer
                       "
                     >
                       <svg
                         class="w-6 h-6 rotate-90"
-                        fill="#F3DFF6"
+                        fill="##364044"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -352,12 +358,12 @@
       </section>
       <section  class="bg-secondary-light w-full m-auto mt-10 p-5 md:flex justify-evenly text-lg text-primary-dark">
         <div class="md:w-1/2 mx-3 pr-4 w-full ">
-          <h3 class="text-4xl my-4">Mikä tapahtuma</h3>
-          <p class="w-full">Miten luovuuden mahdollisuuksia huomioiva näkökulma työelämässä eri aloilla ja ammateissa otetaan käyttöön? Miten luovuuden huomiointi edistää kestävää, hyvää työelämää ja tulevaisuutta? Moniäänisessä tapahtumassa kuullaan sekä huippututkijoiden puheenvuoroja että käydään eri alojen ammattilaisten ja opiskelijoiden yhteistä keskustelua luovuuden mahdollisuuksista työelämässä.</p>
+          <h3 class="text-4xl my-4 font-header">Mikä tapahtuma</h3>
+          <p class="w-full font-body">Miten luovuuden mahdollisuuksia huomioiva näkökulma työelämässä eri aloilla ja ammateissa otetaan käyttöön? Miten luovuuden huomiointi edistää kestävää, hyvää työelämää ja tulevaisuutta? Moniäänisessä tapahtumassa kuullaan sekä huippututkijoiden puheenvuoroja että käydään eri alojen ammattilaisten ja opiskelijoiden yhteistä keskustelua luovuuden mahdollisuuksista työelämässä.</p>
         </div>
         <div class="md:w-1/2 mx-3 pr-4 w-full">  
-          <h3 class="text-4xl my-4">Kenelle?</h3>
-          <p class="w-full">Tapahtuma on tarkoitettu eri alojen ammateissa toimiville ammattilaisille, asiantuntijoille, yrittäjille ja opiskelijoille. Luovuus tuo mahdollisuuksia kaikilla aloilla!</p>
+          <h3 class="text-4xl my-4 font-header">Kenelle?</h3>
+          <p class="w-full font-body">Tapahtuma on tarkoitettu eri alojen ammateissa toimiville ammattilaisille, asiantuntijoille, yrittäjille ja opiskelijoille. Luovuus tuo mahdollisuuksia kaikilla aloilla!</p>
         </div>
       </section>
     </main>
