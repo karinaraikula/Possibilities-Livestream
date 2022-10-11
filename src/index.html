@@ -23,11 +23,11 @@
       }
 
       .vjs-theme-own .vjs-control-bar {
-        height: 62px;
+        height: 60px;
         padding-top: 5px;
         padding-left: 20px;
         background: none;
-        background-image: linear-gradient(to top, rgb(31, 33, 34), rgba(54, 64, 68, 0.129));
+        background-image: linear-gradient(to top, #1F2122, rgba(54, 64, 68, 0.357));
       }
 
       .vjs-theme-own .vjs-button > .vjs-icon-placeholder::before {
@@ -80,7 +80,7 @@
       .vjs-theme-own .vjs-fullscreen-control {
         order: 3;
         flex: 1;
-        font-size: 1.2em;
+        font-size: 1.4em;
       }
 
       /* Volume stuff */
@@ -153,7 +153,7 @@
 
         border-style: solid;
         border-width: 0 0 1.75em 3em;
-        border-color: transparent transparent rgba(255, 255, 255, 0.25)
+        border-color: transparent transparent rgba(218, 218, 218, 0.25)
           transparent;
       }
 
@@ -243,12 +243,12 @@
         "
       >    
         <div id="videoDiv" class="h-full lg:w-full  content-center m-auto"  poster="images/poster.jpg">
-        <video id="my-video" class="video-js vjs-theme-own vjs-big-play-centered">
-            <source src="images/video.mp4" type="video/mp4" />
-          </video>
+   <!-----  <video id="my-video" class="video-js vjs-theme-own vjs-big-play-centered">
+            <source src="images/video.mp4" type="video/mp4" />  
+          </video>   ------>
          
 
- <!----- 
+     
           <video
           id="my-video"
           class="video-js vjs-theme-own vjs-big-play-centered"
@@ -268,7 +268,9 @@
             >
           </p>
         </video>
-         ------>
+
+      
+       
         </div>
 
         <div id="liveChat" class="m-auto border-zinc-900 border-2 rounded-sm p-4 lg:ml-5 md:w-8/12 xs:w-full mt-0 md:mt-6 bg-zinc-800 h-[32rem]">
