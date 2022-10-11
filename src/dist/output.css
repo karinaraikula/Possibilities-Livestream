@@ -891,6 +891,10 @@ html,
   width: 83.333333%;
 }
 
+.w-5\/6 {
+  width: 83.333333%;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -1792,6 +1796,15 @@ li a:hover {
 }
 
 @media (min-width: 640px) {
+  .sm\:mx-6 {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .sm\:mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -1810,6 +1823,18 @@ li a:hover {
 
   .sm\:w-6 {
     width: 1.5rem;
+  }
+
+  .sm\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+
+  .sm\:pl-6 {
+    padding-left: 1.5rem;
   }
 
   .sm\:text-2xl {
@@ -1831,10 +1856,6 @@ li a:hover {
 
   .md\:mt-6 {
     margin-top: 1.5rem;
-  }
-
-  .md\:mb-6 {
-    margin-bottom: 1.5rem;
   }
 
   .md\:flex {
@@ -1873,6 +1894,10 @@ li a:hover {
     width: 66.666667%;
   }
 
+  .md\:justify-between {
+    justify-content: space-between;
+  }
+
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -1902,17 +1927,25 @@ li a:hover {
   }
 }
 
+@media (min-width: 640px) {
+  @media (min-width: 768px) {
+    .sm\:md\:pl-6 {
+      padding-left: 1.5rem;
+    }
+  }
+}
+
 @media (min-width: 1024px) {
   .lg\:ml-5 {
     margin-left: 1.25rem;
   }
 
-  .lg\:mb-6 {
-    margin-bottom: 1.5rem;
-  }
-
   .lg\:ml-10 {
     margin-left: 2.5rem;
+  }
+
+  .lg\:mb-6 {
+    margin-bottom: 1.5rem;
   }
 
   .lg\:flex {
