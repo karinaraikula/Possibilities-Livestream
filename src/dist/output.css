@@ -1833,6 +1833,10 @@ li a:hover {
     margin-top: 1.5rem;
   }
 
+  .md\:mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -1903,6 +1907,14 @@ li a:hover {
     margin-left: 1.25rem;
   }
 
+  .lg\:mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  .lg\:ml-10 {
+    margin-left: 2.5rem;
+  }
+
   .lg\:flex {
     display: flex;
   }
@@ -1914,6 +1926,10 @@ li a:hover {
   .lg\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .lg\:pb-0 {
+    padding-bottom: 0px;
   }
 
   .lg\:text-4xl {
