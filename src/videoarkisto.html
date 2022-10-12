@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-
+<html lang="fi">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Live streaming page materials" />
+    <meta
+      name="keywords"
+      content="Livestream, live chat, mahdollisuuksien maisemia"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Materiaalit | Mahdollisuuksien Maisemia</title>
     <link href="./dist/output.css" rel="stylesheet" />
     <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       .player {
@@ -17,8 +26,8 @@
       }
 
       .vjs-theme-own {
-        --vjs-theme-own--primary: #A3B3BC;
-        --vjs-theme-own--secondary: #E8EDF0;
+        --vjs-theme-own--primary: #a3b3bc;
+        --vjs-theme-own--secondary: #e8edf0;
       }
 
       .vjs-theme-own .vjs-control-bar {
@@ -26,7 +35,11 @@
         padding-top: 5px;
         padding-left: 20px;
         background: none;
-        background-image: linear-gradient(to top, rgb(31, 33, 34), rgba(54, 64, 68, 0.129));
+        background-image: linear-gradient(
+          to top,
+          rgb(31, 33, 34),
+          rgba(54, 64, 68, 0.129)
+        );
       }
 
       .vjs-theme-own .vjs-button > .vjs-icon-placeholder::before {
@@ -57,7 +70,7 @@
       }
 
       .vjs-theme-own .vjs-play-progress {
-        background-color: #E8EDF0;
+        background-color: #e8edf0;
       }
 
       .vjs-theme-own .vjs-remaining-time {
@@ -183,181 +196,534 @@
       <section class="top-nav">
         <div>
           <a href="index.html">
-          <img src="./images/metropolia-logo.png" alt="" class="h-14">
-        </a>
+            <img
+              src="./images/metropolia-logo.png"
+              alt="Metropolian logo, linkki etusivulle"
+              class="h-14"
+            />
+          </a>
         </div>
         <input id="menu-toggle" type="checkbox" />
-        <label class='menu-button-container' for="menu-toggle">
-          <div class='menu-button'></div>
+        <label
+          class="menu-button-container"
+          for="menu-toggle"
+          aria-label="Avaa tai sulje navigaatio"
+        >
+          <div class="menu-button"></div>
         </label>
-        <ul class="menu text-sm md:text-lg font-header">
-          <li class="" > <a href="index.html">Etusivu</a> </li>
-          <li> <a href="aikataulu.html">Aikataulu</a> </li>
-          <li> <a href="videoarkisto.html" class="active">Materiaalit</a> </li>
-          <li> <a href="form.html">Ota yhteyttä</a> </li>
+        <ul class="menu text-lg font-header">
+          <li><a href="index.html" aria-label="Etusivu">Etusivu</a></li>
+          <li>
+            <a href="aikataulu.html" aria-label="Aikataulu">Aikataulu</a>
+          </li>
+          <li>
+            <a href="videoarkisto.html" aria-label="Materiaalit" class="active"
+              >Materiaalit</a
+            >
+          </li>
+          <li>
+            <a href="form.html" aria-label="Ota yhteyttä">Ota yhteyttä</a>
+          </li>
         </ul>
       </section>
-      
-          <h1 class="text-center text-4xl mb-5 p-5 text-secondary-light font-body ">Materiaaliarkisto</h1>
 
+      <h1 class="text-center text-4xl mb-5 p-5 text-secondary-light font-body">
+        Materiaaliarkisto
+      </h1>
 
-<div id="default-carousel" class="relative" data-carousel="slide">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden  md:h-96">
-         <!-- Item 1 -->
-        <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20" data-carousel-item="">
-            <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-            <img src="./images/carousel1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+      <div id="default-carousel" class="relative" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-60 overflow-hidden md:h-96">
+          <!-- Item 1 -->
+          <div
+            class="
+              duration-700
+              ease-in-out
+              absolute
+              inset-0
+              transition-all
+              transform
+              translate-x-0
+              z-20
+            "
+            data-carousel-item=""
+          >
+            <img
+              src="./images/carousel3.jpg"
+              class="
+                absolute
+                block
+                w-full
+                -translate-x-1/2 -translate-y-1/2
+                top-1/2
+                left-1/2
+              "
+              alt="Karusellikuva kamerasta 1"
+            />
+          </div>
+          <!-- Item 2 -->
+          <div
+            class="
+              duration-700
+              ease-in-out
+              absolute
+              inset-0
+              transition-all
+              transform
+              translate-x-full
+              z-10
+            "
+            data-carousel-item=""
+          >
+            <img
+              src="./images/carousel2.jpg"
+              class="
+                absolute
+                block
+                w-full
+                -translate-x-1/2 -translate-y-1/2
+                top-1/2
+                left-1/2
+              "
+              alt="Karusellikuva kamerasta 2"
+            />
+          </div>
+          <!-- Item 3 -->
+          <div
+            class="
+              duration-700
+              ease-in-out
+              absolute
+              inset-0
+              transition-all
+              transform
+              -translate-x-full
+              z-10
+            "
+            data-carousel-item=""
+          >
+            <img
+              src="./images/carousel1.jpg"
+              class="
+                absolute
+                block
+                w-full
+                -translate-x-1/2 -translate-y-1/2
+                top-1/2
+                left-1/2
+              "
+              alt="Karusellikuva kamerasta 3"
+            />
+          </div>
         </div>
-        <!-- Item 2 -->
-        <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="">
-            <img src="./images/carousel2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <!-- Slider indicators -->
+        <div
+          class="
+            hidden
+            absolute
+            z-30
+            sm:flex
+            space-x-3
+            -translate-x-1/2
+            bottom-5
+            left-1/2
+          "
+        >
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full bg-white dark:bg-gray-800"
+            aria-current="true"
+            aria-label="Kuva 1"
+            data-carousel-slide-to="0"
+          ></button>
+          <button
+            type="button"
+            class="
+              w-3
+              h-3
+              rounded-full
+              bg-white/50
+              dark:bg-gray-800/50
+              hover:bg-white
+              dark:hover:bg-gray-800
+            "
+            aria-current="false"
+            aria-label="Kuva 2"
+            data-carousel-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            class="
+              w-3
+              h-3
+              rounded-full
+              bg-white/50
+              dark:bg-gray-800/50
+              hover:bg-white
+              dark:hover:bg-gray-800
+            "
+            aria-current="false"
+            aria-label="Kuva 3"
+            data-carousel-slide-to="2"
+          ></button>
         </div>
-        <!-- Item 3 -->
-        <div class="duration-700 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
-            <img src="./images/carousel3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-    </div>
-    <!-- Slider indicators -->
-    <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-        <button type="button" class="w-3 h-3 rounded-full bg-white dark:bg-gray-800" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-        <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-        <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-    </div>
-    <!-- Slider controls -->
-    <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev="">
-        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-400/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next="">
-        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-400/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
-</div>
-
-         
-   
-    </header>
-      <div class="sm:w-2/3 w-5/6 justify-center m-auto mt-9">
-          <h4 class="text-xl text-secondary-light m-auto justify-center my-3 font-body">Täältä löydät kaikki meidän menneet striimit</h4>
-          <p class="text-secondary-light font-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum adipisci aliquid quis? Tenetur a, reprehenderit velit quas voluptatibus eum nostrum. Dolorum, tempora inventore! Esse dolor, minus iure excepturi et autem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam minus aspernatur corporis, nisi laudantium doloremque rerum, esse reprehenderit, dicta quasi sequi dolore fugit cum ipsam nulla quas amet illo?</p>
-          
-          <p class="text-secondary-light font-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum adipisci aliquid quis? Tenetur a, reprehenderit velit quas voluptatibus eum nostrum. Dolorum, tempora inventore! Esse dolor, minus iure excepturi et autem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam minus aspernatur corporis, nisi laudantium doloremque rerum, esse reprehenderit, dicta quasi sequi dolore fugit cum ipsam nulla quas amet illo?</p>
+        <!-- Slider controls -->
+        <button
+          type="button"
+          class="
+            absolute
+            top-0
+            left-0
+            z-30
+            flex
+            items-center
+            justify-center
+            h-full
+            px-4
+            cursor-pointer
+            group
+            focus:outline-none
+          "
+          data-carousel-prev=""
+        >
+          <span
+            class="
+              inline-flex
+              items-center
+              justify-center
+              w-8
+              h-8
+              rounded-full
+              sm:w-10 sm:h-10
+              bg-white/30
+              dark:bg-gray-400/30
+              group-hover:bg-white/50
+              dark:group-hover:bg-gray-800/60
+              group-focus:ring-4 group-focus:ring-white
+              dark:group-focus:ring-gray-800/70
+              group-focus:outline-none
+            "
+          >
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-900"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+            <span class="sr-only">Edellinen</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="
+            absolute
+            top-0
+            right-0
+            z-30
+            flex
+            items-center
+            justify-center
+            h-full
+            px-4
+            cursor-pointer
+            group
+            focus:outline-none
+          "
+          data-carousel-next=""
+        >
+          <span
+            class="
+              inline-flex
+              items-center
+              justify-center
+              w-8
+              h-8
+              rounded-full
+              sm:w-10 sm:h-10
+              bg-white/30
+              dark:bg-gray-400/30
+              group-hover:bg-white/50
+              dark:group-hover:bg-gray-800/60
+              group-focus:ring-4 group-focus:ring-white
+              dark:group-focus:ring-gray-800/70
+              group-focus:outline-none
+            "
+          >
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-900"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+            <span class="sr-only">Seuraava</span>
+          </span>
+        </button>
       </div>
+    </header>
+    <div class="sm:w-2/3 w-5/6 justify-center m-auto mt-9">
+      <h2
+        class="
+          text-xl text-secondary-light
+          m-auto
+          justify-center
+          my-3
+          font-body
+        "
+      >
+        Täältä löydät kaikki meidän menneet striimit
+      </h2>
+      <p class="text-secondary-light font-body">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum
+        adipisci aliquid quis? Tenetur a, reprehenderit velit quas voluptatibus
+        eum nostrum. Dolorum, tempora inventore! Esse dolor, minus iure
+        excepturi et autem. Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit. Perferendis laboriosam minus aspernatur corporis, nisi laudantium
+        doloremque rerum, esse reprehenderit, dicta quasi sequi dolore fugit cum
+        ipsam nulla quas amet illo?
+      </p>
+
+      <p class="text-secondary-light font-body">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum
+        adipisci aliquid quis? Tenetur a, reprehenderit velit quas voluptatibus
+        eum nostrum. Dolorum, tempora inventore! Esse dolor, minus iure
+        excepturi et autem. Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit. Perferendis laboriosam minus aspernatur corporis, nisi laudantium
+        doloremque rerum, esse reprehenderit, dicta quasi sequi dolore fugit cum
+        ipsam nulla quas amet illo?
+      </p>
+    </div>
 
     <main class="w-full h-fit m-auto">
-     <div class="flex-col w-11/12 md:w-4/5 m-auto justify-center my-10">
-      <h4 id="program-anchor1" class="m-6 font-body text-xl">Keynote-puheenvuoro</h4>
-          <div class="mx-6 md:flex justify-between w-full">
-            <video
-              class="video-js vjs-default-skin vjs-big-play-centered mb-6"
-              controls
-              width="360" height="200"
-              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=ixRKeQMa7Nc"}] }'
-            >
-            </video>
-            <p class="w-10/12 md:w-2/3 md:pl-6 text-secondary-light text-justify font-body">Merkityksellisyyden kokemukset kestävän tulevaisuuden edellytyksenä
-Arto O. Salonen (KT), Anna-Maria Isola (VTT) & Laura Huhtinen-Hildén (FT, MuM). <br><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui aliquam consequuntur laudantium maiores debitis beatae aut aperiam in neque possimus laborum nulla, sed sequi accusamus quas quo impedit, officia autem. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat culpa et, magni cumque sit esse, quia sequi aliquam debitis, assumenda provident officiis id repellendus labore? Pariatur nemo quod qui reprehenderit.</p>
-          </div>
-          <h4 class="m-6 font-body text-xl">Uusi urapolku hakusessa?</h4>
-           <div class="mx-6  md:flex justify-between w-full ">
-            <video
-              class="video-js vjs-default-skin vjs-big-play-centered mb-6"
-              controls
-              width="360" height="200"
-              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=t4dQHs5em5M"}] }'
-            >
-            </video>
-            <p class="w-10/12 md:w-2/3 md:pl-6 text-secondary-light text-justify font-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui aliquam consequuntur laudantium maiores debitis beatae aut aperiam in neque possimus laborum nulla, sed sequi accusamus quas quo impedit, officia autem. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat culpa et, magni cumque sit esse, quia sequi aliquam debitis, assumenda provident officiis id repellendus labore? Pariatur nemo quod qui reprehenderit.</p>
+      <div class="flex-col w-11/12 md:w-4/5 m-auto justify-center my-10">
+        <h3 id="program-anchor1" class="m-6 font-body text-xl">
+          Keynote-puheenvuoro
+        </h3>
+        <div class="mx-6 md:flex justify-between w-full">
+          <iframe
+            width="360"
+            height="200"
+            src="https://www.youtube.com/embed/xkulH9Hz6BY?modestbranding=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <p
+            class="
+              w-10/12
+              md:w-2/3 md:pl-6
+              text-secondary-light text-justify
+              font-body
+              my-5
+            "
+          >
+            Merkityksellisyyden kokemukset kestävän tulevaisuuden edellytyksenä
+            Arto O. Salonen (KT), Anna-Maria Isola (VTT) & Laura Huhtinen-Hildén
+            (FT, MuM). <br /><br />
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
+            aliquam consequuntur laudantium maiores debitis beatae aut aperiam
+            in neque possimus laborum nulla, sed sequi accusamus quas quo
+            impedit, officia autem. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Repellat culpa et, magni cumque sit esse, quia
+            sequi aliquam debitis, assumenda provident officiis id repellendus
+            labore? Pariatur nemo quod qui reprehenderit.
+          </p>
+        </div>
+        <h3 class="m-6 font-body text-xl text-white">
+          Uusi urapolku hakusessa?
+        </h3>
+        <div class="mx-6 md:flex justify-between w-full">
+          <iframe
+            width="360"
+            height="200"
+            src="https://www.youtube.com/embed/t4dQHs5em5M?modestbranding=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <p
+            class="
+              w-10/12
+              md:w-2/3 md:pl-6
+              text-secondary-light text-justify
+              font-body
+              my-5
+            "
+          >
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
+            aliquam consequuntur laudantium maiores debitis beatae aut aperiam
+            in neque possimus laborum nulla, sed sequi accusamus quas quo
+            impedit, officia autem. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Repellat culpa et, magni cumque sit esse, quia
+            sequi aliquam debitis, assumenda provident officiis id repellendus
+            labore? Pariatur nemo quod qui reprehenderit.
+          </p>
+        </div>
+        <h3 id="program-anchor2" class="m-6 font-body text-xl text-white">
+          Yhteistä ohjelmaa Ravintolasalissa
+        </h3>
+        <div class="mx-6 md:flex justify-between w-full">
+          <iframe
+            width="360"
+            height="200"
+            src="https://www.youtube.com/embed/mXnp_KIo8q8?modestbranding=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <p
+            class="
+              w-10/12
+              md:w-2/3 md:pl-6
+              text-secondary-light text-justify
+              font-body
+              my-5
+            "
+          >
+            Inspiraatio-esitys: Kokemuksia luovuudesta – saamme vieraita Lahden
+            seudulta, jotka esittävät inspiroivan esimerkin luovuuden
+            merkityksestä arjen tukena. <br /><br />
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
+            aliquam consequuntur laudantium maiores debitis beatae aut aperiam
+            in neque possimus laborum nulla, sed sequi accusamus quas quo
+            impedit, officia autem. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Repellat culpa et, magni cumque sit esse, quia
+            sequi aliquam debitis, assumenda provident officiis id repellendus
+            labore? Pariatur nemo quod qui reprehenderit.
+          </p>
+        </div>
+        <h3 id="program-anchor3" class="m-6 font-body text-xl text-white">
+          Keynote-puheenvuoro
+        </h3>
+        <div class="mx-6 md:flex justify-between w-full">
+          <iframe
+            width="360"
+            height="200"
+            src="https://www.youtube.com/embed/_0YUo-VTV6k?modestbranding=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <p
+            class="
+              w-10/12
+              md:w-2/3 md:pl-6
+              text-secondary-light text-justify
+              font-body
+              my-5
+            "
+          >
+            Musiikki, mieli, keho ja aivot – miten musiikki meitä vahvistaa?
+            Suvi Saarikallio (FT) <br /><br />
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
+            aliquam consequuntur laudantium maiores debitis beatae aut aperiam
+            in neque possimus laborum nulla, sed sequi accusamus quas quo
+            impedit, officia autem. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Repellat culpa et, magni cumque sit esse, quia
+            sequi aliquam debitis, assumenda provident officiis id repellendus
+            labore? Pariatur nemo quod qui reprehenderit.
+          </p>
+        </div>
 
-          </div>
-            <h4  id="program-anchor2" class="m-6 font-body text-xl">Yhteistä ohjelmaa Ravintolasalissa</h4>
-          <div class="mx-6 md:flex justify-between w-full ">
-            
-            <video
-
-              class="video-js vjs-default-skin vjs-big-play-centered mb-6"
-              controls
-              width="360" height="200"
-              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=a7qyW1G350g"}] }'
-            >
-            </video>
-            <p class="w-10/12 md:w-2/3 md:pl-6 text-secondary-light text-justify font-body">Inspiraatio-esitys: Kokemuksia luovuudesta – saamme vieraita Lahden seudulta, jotka esittävät inspiroivan esimerkin luovuuden merkityksestä arjen tukena. <br><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui aliquam consequuntur laudantium maiores debitis beatae aut aperiam in neque possimus laborum nulla, sed sequi accusamus quas quo impedit, officia autem. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat culpa et, magni cumque sit esse, quia sequi aliquam debitis, assumenda provident officiis id repellendus labore? Pariatur nemo quod qui reprehenderit.</p>
-
-          </div> 
-           <h4 id="program-anchor3" class="m-6 font-body text-xl">Keynote-puheenvuoro</h4>
-          <div class="mx-6 md:flex justify-between w-full">
-            <video
-              class="video-js vjs-default-skin vjs-big-play-centered mb-6"
-              controls
-              width="360" height="200"
-              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=_0YUo-VTV6k"}] }'
-            >
-            </video>
-            <p class="w-10/12 md:w-2/3 md:pl-6 text-secondary-light text-justify font-body">Musiikki, mieli, keho ja aivot – miten musiikki meitä vahvistaa? Suvi Saarikallio (FT) <br><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui aliquam consequuntur laudantium maiores debitis beatae aut aperiam in neque possimus laborum nulla, sed sequi accusamus quas quo impedit, officia autem. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat culpa et, magni cumque sit esse, quia sequi aliquam debitis, assumenda provident officiis id repellendus labore? Pariatur nemo quod qui reprehenderit.</p>
-          </div> 
-
-          <h4 class="m-6 font-body text-xl">Inspomessut</h4>
-          <div class="mx-6 md:flex justify-between w-full">
-            <video  
-              class="video-js vjs-default-skin vjs-big-play-centered mb-6"
-              controls
-              width="360" height="200"
-              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=Lcu8SdcsYnY"}] }'
-            >
-            </video>
-            <p class="w-10/12 md:w-2/3  md:pl-6 text-secondary-light text-justify font-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui aliquam consequuntur laudantium maiores debitis beatae aut aperiam in neque possimus laborum nulla, sed sequi accusamus quas quo impedit, officia autem. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat culpa et, magni cumque sit esse, quia sequi aliquam debitis, assumenda provident officiis id repellendus labore? Pariatur nemo quod qui reprehenderit.</p>
-          </div> 
-          <h4 class="m-6 font-body text-xl">Work-Life Balance seminaari</h4>
-          <div class="mx-6 md:flex justify-between w-full">
-              
-
-            <video
-              class="video-js vjs-default-skin vjs-big-play-centered mb-6"
-              controls
-              width="360" height="200"
-              data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=_6iGyt4IcI0"}] }'
-            >
-            </video>
-            <p class="w-10/12 md:w-2/3 md:pl-6 text-secondary-light text-justify font-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui aliquam consequuntur laudantium maiores debitis beatae aut aperiam in neque possimus laborum nulla, sed sequi accusamus quas quo impedit, officia autem. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat culpa et, magni cumque sit esse, quia sequi aliquam debitis, assumenda provident officiis id repellendus labore? Pariatur nemo quod qui reprehenderit.</p>
-
-          </div> 
-       
-    </div>
-    
+        <h3 class="m-6 font-body text-xl text-white">Inspomessut</h3>
+        <div class="mx-6 md:flex justify-between w-full">
+          <iframe
+            width="360"
+            height="200"
+            src="https://www.youtube.com/embed/Lcu8SdcsYnY?modestbranding=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <p
+            class="
+              w-10/12
+              md:w-2/3 md:pl-6
+              text-secondary-light text-justify
+              font-body
+              my-5
+            "
+          >
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
+            aliquam consequuntur laudantium maiores debitis beatae aut aperiam
+            in neque possimus laborum nulla, sed sequi accusamus quas quo
+            impedit, officia autem. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Repellat culpa et, magni cumque sit esse, quia
+            sequi aliquam debitis, assumenda provident officiis id repellendus
+            labore? Pariatur nemo quod qui reprehenderit.
+          </p>
+        </div>
+        <h3 class="m-6 font-body text-xl text-white">
+          Work-Life Balance seminaari
+        </h3>
+        <div class="mx-6 md:flex justify-between w-full">
+          <iframe
+            width="360"
+            height="200"
+            src="https://www.youtube.com/embed/_6iGyt4IcI0?modestbranding=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <p
+            class="
+              w-10/12
+              md:w-2/3 md:pl-6
+              text-secondary-light text-justify
+              font-body
+              my-5
+            "
+          >
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
+            aliquam consequuntur laudantium maiores debitis beatae aut aperiam
+            in neque possimus laborum nulla, sed sequi accusamus quas quo
+            impedit, officia autem. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Repellat culpa et, magni cumque sit esse, quia
+            sequi aliquam debitis, assumenda provident officiis id repellendus
+            labore? Pariatur nemo quod qui reprehenderit.
+          </p>
+        </div>
+      </div>
     </main>
 
     <footer
-      class="
-        bg-primary-light
-        text-lg
-        flex
-        justify-center
-        content-center
-        p-5
-      "
+      class="bg-primary-light text-lg flex justify-center content-center p-5"
     >
-      <img src="/images/metropolia-logo.png" alt="" class="h-14" />
+      <img
+        src="/images/metropolia-logo.png"
+        alt="Metropolia-logo"
+        class="h-14"
+      />
     </footer>
-
- <script 
-    src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.1.2/qs.min.js" 
-    integrity="sha512-LIxZvLf3cF72wbVxt+3ajwseTY82yjgyVvAN2nQ2B037JtZPaVZRkaukU/JmG1EkbFmD9a7Wx5VAcosed0/u6g==" 
-    crossorigin="anonymous">
-    </script>
-    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.1.2/qs.min.js"
+      integrity="sha512-LIxZvLf3cF72wbVxt+3ajwseTY82yjgyVvAN2nQ2B037JtZPaVZRkaukU/JmG1EkbFmD9a7Wx5VAcosed0/u6g=="
+      crossorigin="anonymous"
+    ></script>
     <script src="hamNav.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-        <script src="./Youtube.min.js"></script>
-    <script src="./Youtube.js"></script>
-
-
-   
-
   </body>
-  
 </html>

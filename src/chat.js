@@ -1,6 +1,6 @@
 "use strict";
 
-const socket = io("http://localhost:3000");
+const socket = io("streamserver.norwayeast.cloudapp.azure.com");
 
 const userJoin = document.getElementById("userForm");
 const username = document.getElementById("username");

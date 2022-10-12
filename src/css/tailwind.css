@@ -7,7 +7,7 @@
   h3 {
     font-weight: bold;
     font-size: 1.1em;
-    color: #1F2122;
+    color: #1f2122;
   }
 
   h4 {
@@ -238,7 +238,7 @@
     cursor: pointer;
     display: inline-flex;
     fill: currentcolor;
-    font-family: "Libre Franklin";
+    font-family: "Lato";
     font-size: 14px;
     font-weight: 500;
     height: 48px;
@@ -319,22 +319,22 @@
   }
 }
 
-#linkki {
-  color: #a3b3bc;
+.linkki {
+  color: #607581;
   text-decoration: underline;
-  font-family: "Libre Franklin";
+  font-family: "Lato";
 }
 
-#linkki:visited {
+.linkki:visited {
   color: #551a8b;
 }
 
-#linkki:hover {
+.linkki:hover {
   color: #364044;
 }
 
 #ohjelma {
-  font-family: "Libre Franklin";
+  font-family: "Lato";
   font-size: 1.25rem;
   font-weight: bold;
   color: #1f2122;
@@ -347,9 +347,7 @@
   border-radius: 5px;
 }
 
-
 #boxShadow {
   box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
-      rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
 }
-
