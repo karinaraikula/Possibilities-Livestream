@@ -1,7 +1,8 @@
 # Possibilities-Livestream
 Project on branch ProjectMain
 
-Group project created for showcasing livestreaming skills and webpage design
+Group project created for showcasing livestreaming skills and webpage redesign.
+Page to redesign https://mahdollisuuksienmaisemia.metropolia.fi/
 
 <img width="1440" alt="Screenshot 2022-11-06 at 11 55 04" src="https://user-images.githubusercontent.com/75119480/200166359-f6cfb3db-4b0b-4b85-9f33-992b388b065b.png">
 <img width="1440" alt="Screenshot 2022-11-06 at 11 55 33" src="https://user-images.githubusercontent.com/75119480/200166362-d939d5c0-0964-43e6-8b51-2e8be39bea54.png">
